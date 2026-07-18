@@ -821,30 +821,14 @@ const SECTORS = [
       {
         slug: "china",
         name: "China",
+        noPage: true,
         heroImage: "images/stock/shanghai-skyline.jpg",
         intro: "Our China desk supports clients sourcing, manufacturing, or expanding into the Chinese market, backed by on-the-ground relationships and language capability rather than a remote advisory service.",
-        richPage: {
-          subheading: "On-the-ground support for sourcing, manufacturing, and market entry",
-          blocks: [
-            {
-              type: "features",
-              heading: "What We Support",
-              columns: 3,
-              items: [
-                { name: "Sourcing & Manufacturing", body: "On-the-ground supplier and factory relationships, not a directory of contacts.", image: "images/stock/shanghai-skyline.jpg" },
-                { name: "Market Entry", body: "Practical support for businesses entering the Chinese market for the first time.", image: "images/stock/team-meeting.jpg" },
-                { name: "Language & Relationships", body: "Language capability and existing relationships that a remote advisory desk can't replicate.", image: "images/stock/shanghai-skyline.jpg" },
-              ],
-            },
-          ],
-          cta: {
-            heading: "Looking to Enter the Chinese Market?",
-            body: "Get in touch and our China desk will scope the approach with you.",
-            buttonLabel: "Contact Us",
-            buttonHref: "contact.html",
-            form: false,
-          },
-        },
+        panelBody: [
+          "Sourcing & Manufacturing: on-the-ground supplier and factory relationships, not a directory of contacts. Market Entry: practical support for businesses entering the Chinese market for the first time. Language & Relationships: language capability and existing relationships that a remote advisory desk can't replicate.",
+          // TODO: swap this note for the real Dropbox link once Nai sends it.
+          "Full details available on request — get in touch and our China desk will scope the approach with you.",
+        ],
       },
     ],
   },
