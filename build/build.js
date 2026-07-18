@@ -452,6 +452,50 @@ function renderRichDescriptionBlock(block) {
   </section>`;
 }
 
+// Like productGrid, but no price row — for "shown to give a sense of the
+// line" listings that aren't a live storefront (no prices, per client note).
+function renderRichProductShowcaseBlock(block) {
+  const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
+  const items = block.items
+    .map(
+      (p) => `<div class="product-card">
+          <div class="product-card-image" style="background-image: url('${p.image}')"></div>
+          <h3 class="product-card-name">${p.name}</h3>
+        </div>`
+    )
+    .join("\n        ");
+  return `<section class="services-section">
+    <div class="container">
+      ${heading}
+      <div class="product-grid">
+        ${items}
+      </div>
+    </div>
+  </section>`;
+}
+
+// A horizontally scrollable, snap-scrolling row of items — for a listing
+// with too many variants to sensibly grid (e.g. bundle colourways).
+function renderRichCarouselBlock(block) {
+  const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
+  const items = block.items
+    .map(
+      (p) => `<div class="carousel-card">
+          <div class="carousel-card-image" style="background-image: url('${p.image}')"></div>
+          <h3 class="carousel-card-name">${p.name}</h3>
+        </div>`
+    )
+    .join("\n        ");
+  return `<section class="services-section">
+    <div class="container">
+      ${heading}
+      <div class="carousel-track">
+        ${items}
+      </div>
+    </div>
+  </section>`;
+}
+
 function renderRichProductGridBlock(block) {
   const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
   const items = block.items
@@ -626,6 +670,8 @@ const RICH_BLOCK_RENDERERS = {
   process: renderRichProcessBlock,
   description: renderRichDescriptionBlock,
   productGrid: renderRichProductGridBlock,
+  productShowcase: renderRichProductShowcaseBlock,
+  carousel: renderRichCarouselBlock,
   yachtGrid: renderRichYachtGridBlock,
   brokerContact: renderRichBrokerContactBlock,
   logoGrid: renderLogoGridBlock,

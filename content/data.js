@@ -1644,20 +1644,42 @@ const SECTORS = [
       {
         slug: "yoga",
         name: "Yoga",
-        heroImage: img("yoga,studio", 1400, 600),
+        heroImage: "images/sports-wellness/yoga/mat-green.png",
         intro: "We give Yoga Lessons. Our classes and teacher training run across a range of styles and levels, led by instructors with years of teaching experience, designed to be accessible without diluting the practice.",
-        gallery: [img("yogamat,meditation"), img("stretching,fitness")],
-        subServices: [
-          {
-            slug: "yoga-mats",
-            name: "Yoga Mats",
-            noPage: true,
-            heroImage: "images/sports-wellness/yoga/mat-green.png",
-            intro: "Every practice starts with a solid foundation, and the Doranax Athletics yoga mat was built to be exactly that. High-density, non-slip PVC delivers dependable grip through dynamic flows and sweaty power sessions, with a cushioned core that protects knees, wrists, and spine during floor work.",
-            panelBody: [
-              "Available in Green, Blue, and Purple, plus a Multi-Colour Bundle and a Cool Tones Bundle for studios and households equipping more than one mat. Every mat carries the signature Doranax wolf shield at centre.",
-            ],
+        richPage: {
+          subheading: "Every practice starts with a solid foundation",
+          blocks: [
+            {
+              type: "productShowcase",
+              heading: "Yoga Mats",
+              items: [
+                { name: "Yoga Mat — Green", image: "images/sports-wellness/yoga/mat-green.png" },
+                { name: "Yoga Mat — Blue", image: "images/sports-wellness/yoga/mat-blue.png" },
+                { name: "Yoga Mat — Blue (Single)", image: "images/sports-wellness/yoga/mat-blue-single.png" },
+                { name: "Yoga Mat — Purple", image: "images/sports-wellness/yoga/mat-purple.png" },
+              ],
+            },
+            {
+              type: "carousel",
+              heading: "Yoga Mat Bundles",
+              items: [
+                { name: "Multi-Colour Bundle", image: "images/sports-wellness/yoga/mat-bundle-multi.png" },
+                { name: "Cool Tones Bundle", image: "images/sports-wellness/yoga/mat-bundle-cool.png" },
+                { name: "Bundle Set — 2", image: "images/sports-wellness/yoga/mat-bundle-2.png" },
+                { name: "Bundle Set — 3", image: "images/sports-wellness/yoga/mat-bundle-3.png" },
+                { name: "Bundle Set — 4", image: "images/sports-wellness/yoga/mat-bundle-4.png" },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Looking for a Bulk or Studio Order?",
+            body: "Get in touch and our team will help you find the right mats for your studio or event.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
           },
+        },
+        subServices: [
           {
             slug: "yoga-blocks",
             name: "Yoga Blocks",
@@ -1678,12 +1700,6 @@ const SECTORS = [
         richPage: {
           subheading: "The way you show up in training reflects the way you show up in life",
           blocks: [
-            {
-              type: "description",
-              paragraphs: [
-                "The range below is a preview of the Doranax Athletics collection, shown here to give a sense of the line, not as a live storefront.",
-              ],
-            },
             {
               type: "features",
               heading: "The Collection",
