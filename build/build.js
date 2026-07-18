@@ -808,9 +808,11 @@ function buildRichPage(item, backHref, backLabel, outputSlug, titleContext, sect
 
   const cta = rp.cta ? renderRichCta(rp.cta) : "";
 
+  const body = item.subServicesFirst ? hero + subServices + blocks + cta : hero + blocks + subServices + cta;
+
   fs.writeFileSync(
     path.join(ROOT, `${outputSlug}.html`),
-    page(`${item.name} — ${titleContext}`, hero + blocks + subServices + cta, script, pageBodyClass(sectorSlug, item))
+    page(`${item.name} — ${titleContext}`, body, script, pageBodyClass(sectorSlug, item))
   );
 }
 
