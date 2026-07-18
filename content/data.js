@@ -1049,9 +1049,9 @@ const SECTORS = [
         // placeholder gallery image until it's supplied.
         slug: "drinks-cabinet",
         name: "Drinks Cabinet",
-        heroImage: "images/stock/furniture-showroom.jpg",
+        heroImage: "images/design-and-furniture/drinks-cabinet/peacock-chinoiserie-cabinet.png",
         intro: "Custom, bespoke drinks cabinets, designed and built to order.",
-        gallery: ["images/stock/furniture-showroom.jpg", "images/stock/furniture-showroom.jpg"],
+        gallery: ["images/design-and-furniture/drinks-cabinet/peacock-chinoiserie-cabinet.png", "images/design-and-furniture/drinks-cabinet/peacock-chinoiserie-cabinet.png"],
       },
       {
         slug: "bronze-coffee-tables-wooden-boxes",
