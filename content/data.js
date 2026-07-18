@@ -168,6 +168,22 @@ const SECTORS = [
           subheading: "Turning everyday vehicles into moving brand assets",
           blocks: [
             {
+              type: "categoryCards",
+              heading: "Services",
+              cards: [
+                {
+                  title: "Graphic Design Services",
+                  items: ["Packaging", "POS", "Brochures", "Leaflets/Direct Mail", "Canva/Adobe Templates"],
+                },
+                {
+                  title: "Brand Design Services",
+                  items: ["Primary Logo", "Secondary Logo", "Colour Palette", "Typography", "Brand Guidelines"],
+                },
+              ],
+              contactHref: "#graphic-design-contact",
+              contactLabel: "Contact Us",
+            },
+            {
               type: "features",
               heading: "Vehicle Graphics",
               columns: 3,
@@ -206,6 +222,7 @@ const SECTORS = [
             },
           ],
           cta: {
+            id: "graphic-design-contact",
             heading: "Ready to Wrap Your Fleet?",
             body: "Get in touch and our team will help you plan a wrap or graphics job for a single vehicle or a full fleet.",
             buttonLabel: "Contact Us",
@@ -237,22 +254,28 @@ const SECTORS = [
             {
               type: "features",
               heading: "Design Strategy",
-              columns: 3,
+              columns: 4,
               items: [
                 {
                   name: "Design Strategy",
                   body: "We build the thinking before the visuals — brand positioning, market fit, and creative direction that gives every design decision a reason behind it. Nothing gets designed until we know why it needs to exist.",
-                  image: img("designstrategy,brainstorm", 700, 525),
+                  image: "images/advertising/digital-marketing/design-strategy.jpg",
                 },
                 {
                   name: "Branding + Visual Identity",
                   body: "Logos, colour systems, typography, and brand guidelines built to hold up across every touchpoint — print, digital, signage, packaging. One identity, applied consistently everywhere your brand shows up.",
-                  image: img("brandguidelines,identity", 700, 525),
+                  image: "images/advertising/digital-marketing/branding-visual-identity.jpg",
                 },
                 {
                   name: "Experience + Interior Design",
                   body: "Physical spaces — retail, office, hospitality — designed so the brand shows up in the room, not just on the page. From concept through to fit-out, the space becomes part of the identity.",
-                  image: img("retaildesign,interior", 700, 525),
+                  image: "images/advertising/digital-marketing/experience-interior-design.jpg",
+                },
+                {
+                  name: "SEO",
+                  subheading: "Getting found is half the job",
+                  body: "Technical fixes, content structure, and keyword strategy that get you ranking and staying there — not just a one-off audit, but ongoing work that compounds.",
+                  image: "images/advertising/digital-marketing/seo.jpg",
                 },
               ],
             },
@@ -556,12 +579,12 @@ const SECTORS = [
               heading: "Services",
               columns: 3,
               items: [
-                { name: "Strategy & Business Planning", body: "Clear, actionable strategy work grounded in your business and your data, not a generic framework.", image: img("strategyplanning,office", 700, 525) },
+                { name: "Strategy & Business Planning", body: "Clear, actionable strategy work grounded in your business and your data, not a generic framework.", image: "images/consultancy/management-consultancy/strategy-planning.jpg" },
                 { name: "Organisational Design & Change Management", body: "Structural and cultural change managed to actually land, not just get signed off.", image: img("orgdesign,team", 700, 525) },
-                { name: "Operational Efficiency & Process Improvement", body: "Diagnosing and fixing the operational bottlenecks that quietly cost the most.", image: img("processimprovement,workflow", 700, 525) },
-                { name: "Digital & Technology Transformation", body: "Technology change scoped around business outcomes, not the technology itself.", image: img("digitaltransformation,tech", 700, 525) },
-                { name: "Leadership Advisory & Executive Coaching", body: "Senior leadership support that pairs commercial experience with coaching discipline.", image: img("leadershipadvisory,meeting", 700, 525) },
-                { name: "Market Entry & Growth Strategy", body: "Practical market entry and growth planning for businesses scaling into new territory.", image: img("marketentry,growth", 700, 525) },
+                { name: "Operational Efficiency & Process Improvement", body: "Diagnosing and fixing the operational bottlenecks that quietly cost the most.", image: "images/consultancy/management-consultancy/operational-efficiency.jpg" },
+                { name: "Digital & Technology Transformation", body: "Technology change scoped around business outcomes, not the technology itself.", image: "images/consultancy/management-consultancy/digital-technology-transformation.jpg" },
+                { name: "Leadership Advisory & Executive Coaching", body: "Senior leadership support that pairs commercial experience with coaching discipline.", image: "images/consultancy/management-consultancy/leadership-advisory.jpg" },
+                { name: "Market Entry & Growth Strategy", body: "Practical market entry and growth planning for businesses scaling into new territory.", image: "images/consultancy/management-consultancy/market-entry-growth.jpg" },
               ],
             },
             {
@@ -715,12 +738,12 @@ const SECTORS = [
               heading: "Services",
               columns: 3,
               items: [
-                { name: "One-to-One Executive Coaching", body: "Confidential, individual coaching built around the leader's own goals and challenges.", image: img("onetoonecoaching,meeting", 700, 525) },
-                { name: "New Leader / Transition Coaching", body: "Structured support for leaders stepping into a new role or a step up in responsibility.", image: img("newleader,transition", 700, 525) },
-                { name: "High-Potential & Succession Coaching", body: "Coaching for rising leaders being developed for future senior roles.", image: img("succession,leadership", 700, 525) },
-                { name: "Team & Peer Coaching", body: "Coaching extended to leadership teams and peer groups, not just individuals.", image: img("teamcoaching,group", 700, 525) },
-                { name: "360 Feedback & Leadership Assessments", body: "Structured feedback and assessment to ground coaching in a clear starting point.", image: img("feedback,assessment", 700, 525) },
-                { name: "Ongoing Performance & Accountability Coaching", body: "Continued coaching support to keep leaders accountable to what they set out to change.", image: img("performancecoaching,accountability", 700, 525) },
+                { name: "One-to-One Executive Coaching", body: "Confidential, individual coaching built around the leader's own goals and challenges.", image: "images/consultancy/executive-coaching/one-to-one.jpg" },
+                { name: "New Leader / Transition Coaching", body: "Structured support for leaders stepping into a new role or a step up in responsibility.", image: "images/consultancy/executive-coaching/new-leader-transition.jpg" },
+                { name: "High-Potential & Succession Coaching", body: "Coaching for rising leaders being developed for future senior roles.", image: "images/consultancy/executive-coaching/high-potential-succession.jpg" },
+                { name: "Team & Peer Coaching", body: "Coaching extended to leadership teams and peer groups, not just individuals.", image: "images/consultancy/executive-coaching/team-peer.jpg" },
+                { name: "360 Feedback & Leadership Assessments", body: "Structured feedback and assessment to ground coaching in a clear starting point.", image: "images/consultancy/executive-coaching/360-feedback.jpg" },
+                { name: "Ongoing Performance & Accountability Coaching", body: "Continued coaching support to keep leaders accountable to what they set out to change.", image: "images/consultancy/executive-coaching/ongoing-performance.jpg" },
               ],
             },
             {
@@ -749,12 +772,39 @@ const SECTORS = [
           blocks: [
             {
               type: "features",
-              heading: "What We Arrange",
+              heading: "Our Services",
               columns: 3,
               items: [
-                { name: "Travel & Accommodation", body: "Itineraries and accommodation arranged around the client, not a fixed package.", image: img("privatevilla,luxurytravel", 700, 525) },
-                { name: "Specialist Procurement", body: "Sourcing for hard-to-find items and services, handled quietly and efficiently.", image: img("personalshopper,luxury", 700, 525) },
-                { name: "Ongoing Requests", body: "A single point of contact for whatever comes up next, not a one-off booking service.", image: img("conciergecall,service", 700, 525) },
+                {
+                  name: "Real Estate",
+                  subheading: "Discreet access to opportunities",
+                  body: "Doranax Concierge connects clients to off-market and exclusive property opportunities worldwide, alongside full home management, renting, and leasing support handled entirely on your behalf.",
+                  image: "images/consultancy/concierge/real-estate.jpg",
+                },
+                {
+                  name: "Education",
+                  subheading: "Guidance at every stage",
+                  body: "From school placement to university admissions, our advisors work with families to navigate each stage of a child's education, drawing on established relationships with leading institutions.",
+                  image: "images/consultancy/concierge/education.jpg",
+                },
+                {
+                  name: "Art",
+                  subheading: "Collecting with confidence",
+                  body: "Our art advisory gives clients priority access to major fairs and private viewings, alongside sourcing, valuation, and acquisition support for serious collectors.",
+                  image: "images/consultancy/concierge/art.jpg",
+                },
+                {
+                  name: "Lifestyle Services",
+                  subheading: "Everything, handled",
+                  body: "From household management to personal errands, our lifestyle team takes care of daily logistics so you don't have to think about them.",
+                  image: "images/consultancy/concierge/lifestyle-services.jpg",
+                },
+                {
+                  name: "Private Events",
+                  subheading: "Moments, engineered",
+                  body: "Our in-house events team designs and delivers bespoke private events, from intimate gatherings to large-scale celebrations, with precision at every stage.",
+                  image: "images/consultancy/concierge/private-events.jpg",
+                },
               ],
             },
           ],
@@ -825,7 +875,7 @@ const SECTORS = [
               columns: 3,
               items: [
                 { name: "Fireplace Surrounds & Chimneypieces", body: "Bespoke, hand-carved stone chimneypieces and surrounds built to the scale of the room.", image: img("chimneypiece,stone", 700, 525) },
-                { name: "Worktops, Islands & Splashbacks", body: "Kitchen stone specified for grain and finish, not just slab availability.", image: img("stonecounter,kitchen", 700, 525) },
+                { name: "Worktops, Islands & Splashbacks", body: "Kitchen stone specified for grain and finish, not just slab availability.", image: "images/design-and-furniture/natural-stone/worktops-islands-splashbacks.jpg" },
                 { name: "Flooring, Hearths & Staircases", body: "Stone flooring and staircases selected to age well underfoot, not just look good on day one.", image: img("stonestaircase,flooring", 700, 525) },
                 { name: "Reclaimed & Antique Stone Sourcing", body: "Genuine reclaimed and antique stone, sourced with the wear and character already built in.", image: img("reclaimedstone,antique", 700, 525) },
                 { name: "Specification, Templating & Installation", body: "Full specification and templating through to installation management, handled end to end.", image: img("stonetemplating,installation", 700, 525) },
@@ -897,12 +947,17 @@ const SECTORS = [
                   subheading: "Interior Designer & Antiques Dealer",
                   body: "He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses. Today, working alongside Alice Constable Maxwell at Studio Hodsoll on Portobello Road, he takes on a small, carefully chosen number of projects, from advising on a single room through to large-scale residential projects across London, the English countryside, and internationally. Doranax Design and Furniture works with Christopher on select residential projects, drawing on his eye for proportion, material, and detail.",
                   image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
+                  clientPhotos: [
+                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpeg",
+                    "images/design-and-furniture/interior-design/clients/elton-john.jpg",
+                    "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
+                  ],
                 },
                 {
                   name: "Anna Sobolewska",
                   subheading: "Interior Designer, Food & Beverage",
                   body: "Anna Sobolewska is an interior designer specialising in the food & beverage sector, with nine years of experience shaping some of Birmingham's most talked-about new venues. Her work includes The Rolling Mill in the Jewellery Quarter, transforming a grand industrial space into a vibrant, comfortable bar while honouring its heritage, achieved through authentic materials and considered lighting that let the space's industrial past and its new life sit comfortably together. She also designed the interiors for a striking 1920s-inspired venue, using set-dressing, materiality, and lighting to transport guests into an immersive, era-defined atmosphere.",
-                  image: img("interiordesigner,portrait", 700, 525),
+                  video: "images/design-and-furniture/interior-design/anna-sobolewska.mp4",
                 },
               ],
             },
@@ -954,9 +1009,9 @@ const SECTORS = [
               heading: "What We Do",
               columns: 3,
               items: [
-                { name: "Timber Flooring", body: "Solid, engineered, and reclaimed timber flooring specified for grain and how it will wear.", image: img("timberfloor,wood", 700, 525) },
-                { name: "Natural Stone & Tiled Flooring", body: "Stone and tiled flooring matched to the light and use of the room.", image: img("stonetile,flooring", 700, 525) },
-                { name: "Antique & Bespoke Rugs", body: "Antique, vintage, and bespoke rugs and carpets sourced and specified as design pieces.", image: img("antiquecarpet,rug", 700, 525) },
+                { name: "Timber Flooring", body: "Solid, engineered, and reclaimed timber flooring specified for grain and how it will wear.", image: "images/design-and-furniture/flooring/timber-flooring.jpg" },
+                { name: "Natural Stone & Tiled Flooring", body: "Stone and tiled flooring matched to the light and use of the room.", image: "images/design-and-furniture/flooring/natural-stone-tiled.jpg" },
+                { name: "Antique & Bespoke Rugs", body: "Antique, vintage, and bespoke rugs and carpets sourced and specified as design pieces.", image: "images/design-and-furniture/flooring/antique-bespoke-rugs.jpg" },
               ],
             },
           ],
@@ -1024,7 +1079,7 @@ const SECTORS = [
             slug: "bronze",
             name: "Bronze",
             noPage: true,
-            heroImage: img("bronzesculpture,art", 1400, 600),
+            heroImage: "images/design-and-furniture/bronze/bronze-dolphins.jpg",
             intro: "Cast bronze pieces — sculptural forms, console bases, decorative hardware, and one-off commissioned objects — bringing weight, patina, and permanence to a scheme.",
             panelBody: [
               "Bronze is worked both as functional furniture (table bases, fittings) and as pure decorative sculpture, aged and finished to sit comfortably beside genuine antiques.",
@@ -1206,9 +1261,9 @@ const SECTORS = [
           {
             slug: "events-photography",
             name: "Events Photography",
-            heroImage: "images/hospitality-events/events-production/event-photography-1.jpg",
+            heroImage: "images/hospitality-events/events-production/monika/monika-at-work.jpg",
             intro: "Coverage that captures the event as it actually happened, not a staged version of it. We provide professional photographers for events of every kind, briefed on your run sheet so the key moments are never missed. Discreet on the day, thorough in the edit, delivered fast enough to still feel relevant. Photography led by Monika, our in-house event photographer.",
-            gallery: ["images/hospitality-events/events-production/event-photography-1.jpg", "images/hospitality-events/events-production/event-photography-2.jpg"],
+            gallery: ["images/hospitality-events/events-production/monika/monika-portrait.jpg", "images/hospitality-events/events-production/monika/monika-at-work.jpg"],
           },
           {
             slug: "dance",
@@ -1314,7 +1369,8 @@ const SECTORS = [
             name: "Burger",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/burger.png",
-            intro: "Coming Soon. No frills, just done properly. We build burger menus around a simple idea: fewer ingredients, chosen well, cooked with precision, and served without unnecessary complication.",
+            comingSoon: { headline: "Coming Soon", body: "Full launch details to follow." },
+            intro: "No frills, just done properly. We build burger menus around a simple idea: fewer ingredients, chosen well, cooked with precision, and served without unnecessary complication.",
             panelBody: [
               "Every element earns its place on the bun, and the kitchen workflow is built to hold that standard whether an order's eaten in, taken away, or sent out for delivery. A model built for consistency over spectacle — the same burger, done right, every single time.",
             ],
@@ -1434,7 +1490,7 @@ const SECTORS = [
                       length: `72' 11" ft`,
                       builder: "Galeon Yachts",
                       badge: `2021 GALEON YACHTS 72' 11"`,
-                      image: img("motoryacht,galeon", 1000, 650),
+                      image: "images/hospitality-events/yacht-sale/virtus.jpg",
                     },
                     {
                       name: "Nine Nine Wine",
@@ -1445,7 +1501,7 @@ const SECTORS = [
                       length: `66' 2" ft`,
                       builder: "Azimut Yachts",
                       badge: `2016 AZIMUT YACHTS 66' 2"`,
-                      image: img("motoryacht,azimut", 1000, 650),
+                      image: "images/hospitality-events/yacht-sale/nine-nine-wine.jpg",
                     },
                     {
                       name: "Twins PC",
@@ -1456,7 +1512,7 @@ const SECTORS = [
                       length: `81' 11" ft`,
                       builder: "Sanlorenzo Yachts",
                       badge: `1996 SANLORENZO YACHTS 81' 11"`,
-                      image: img("motoryacht,sanlorenzo", 1000, 650),
+                      image: "images/hospitality-events/yacht-sale/twins-pc.jpg",
                     },
                     {
                       name: "Hakuna Matata",
@@ -1467,7 +1523,7 @@ const SECTORS = [
                       length: `58' 10" ft`,
                       builder: "Fairline",
                       badge: `2004 FAIRLINE 58' 10"`,
-                      image: img("motoryacht,fairline", 1000, 650),
+                      image: "images/hospitality-events/yacht-sale/hakuna-matata.jpg",
                     },
                   ],
                 },
@@ -1494,10 +1550,11 @@ const SECTORS = [
             slug: "dj-hire",
             name: "DJ Hire",
             noPage: true,
-            heroImage: img("dj,nightclub", 1400, 600),
+            heroImage: "images/hospitality-events/talent-management/dj-aman.jpg",
             intro: "We provide professional DJ hire for events of every size, from intimate private parties to full-scale corporate launches and festival stages. Every DJ we place comes with the technical setup, genre range, and read-the-room instinct to hold a set together from the first guest through to last dance.",
             panelBody: [
               "Bookings are briefed properly before the day: venue layout, audience profile, key moments in the run sheet, and any must-play or do-not-play lists. Includes full sound and lighting-compatible DJ setup, genre-matched talent, backup equipment, and flexible set lengths.",
+              "<h3>DJ Aman</h3><p>DJ Aman is represented for bookings through Doranax Talent Management, bringing a genre-spanning set built to read the room from first guest to last dance.</p>",
             ],
           },
           {
@@ -1508,7 +1565,7 @@ const SECTORS = [
             intro: "From keynote speakers to confident hosts and MCs, we source talent that fits the tone of your event precisely, driving energy through a product launch, guiding a formal awards dinner, or keeping a wedding reception moving. Every speaker and host is briefed on your agenda, audience, and objectives before they set foot on stage.",
             panelBody: [
               "We handle the parts that usually go wrong: timing, transitions, and tone. Includes rehearsal and briefing calls ahead of the event, and on-the-day coordination with your event manager.",
-              "Bruce Daisley — former Twitter EMEA VP, author, and speaker on workplace culture — is represented for speaking engagements through Doranax Talent Management. Bruce speaks on culture, leadership, and the future of work, drawing on his time leading Twitter's European business and his ongoing research and writing on workplace culture. Doranax Talent Management handles booking, logistics, and coordination for his speaking engagements.",
+              "<h3>Bruce Daisley</h3><p>Bruce Daisley — former Twitter EMEA VP, author, and speaker on workplace culture — is represented for speaking engagements through Doranax Talent Management. Bruce speaks on culture, leadership, and the future of work, drawing on his time leading Twitter's European business and his ongoing research and writing on workplace culture. Doranax Talent Management handles booking, logistics, and coordination for his speaking engagements.</p>",
             ],
           },
           {
@@ -1565,8 +1622,24 @@ const SECTORS = [
         slug: "events-lifestyle",
         name: "Lifestyle & Leisure",
         heroImage: img("luxurytravel,resort", 1400, 600),
-        intro: "First-class, chauffeur-driven journeys and private jet transfers, arranged the moment you need them, handled the whole way through. Also home to our Dance programme with instructor Anna — see the Dance page under Events for class bookings.",
-        gallery: ["images/hospitality-events/events-lifestyle/dance.jpg", "images/hospitality-events/events-lifestyle/photography-courses.webp"],
+        richPage: {
+          subheading: "Chauffeur transfers, private jet travel, and our Dance programme with Anna",
+          blocks: [
+            {
+              type: "intro",
+              paragraphs: [
+                "First-class, chauffeur-driven journeys and private jet transfers, arranged the moment you need them, handled the whole way through. Also home to our Dance programme with instructor Anna — see the Dance page under Events for class details.",
+              ],
+            },
+          ],
+          cta: {
+            heading: "Book a Dance Session with Anna",
+            body: "Get in touch and we'll arrange a class with our instructor Anna — private, group, or as part of a wider event booking.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
         subServices: [
           {
             slug: "luxury-travel",
@@ -1775,7 +1848,7 @@ const SECTORS = [
       {
         slug: "skincare",
         name: "Skincare",
-        heroImage: "images/sports-wellness/skincare/hero.png",
+        heroImage: "images/sports-wellness/skincare/product-sage-4.png",
         intro: "We partner with carefully selected, purpose-driven skincare brands from around the world, brands that share our commitment to natural, ethical, and sustainable formulations that genuinely work. Our mission is simple: connect the best in luxury skincare with the professionals who bring it to life, exclusively through salons, skin clinics, and spas across the UK.",
         richPage: {
           subheading: "Connecting the best in luxury skincare with the professionals who bring it to life",
@@ -1787,9 +1860,9 @@ const SECTORS = [
                 "We don't believe in one size fits all distribution. Every brand we work with receives a tailored, brand by brand strategy built around its unique identity, audience, and goals, with an established network of trusted partners across the UK's key regions. Beauty salons, skin clinics, and spas should never have to compete with a brand's own online store, so we protect exclusivity for our professional partners, giving them genuine competitive advantage, not just another product line.",
               ],
               images: [
-                "images/sports-wellness/skincare/lifestyle-2.png",
                 "images/sports-wellness/skincare/product-sage-1.png",
                 "images/sports-wellness/skincare/product-sage-2.png",
+                "images/sports-wellness/skincare/product-sage-3.png",
               ],
             },
             {

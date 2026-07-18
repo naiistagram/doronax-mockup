@@ -108,7 +108,7 @@ function buildPillSection(items, basePath) {
         ? `<p class="coming-soon-note"><strong>${item.comingSoon.headline || "Coming Soon"}.</strong> ${item.comingSoon.body}</p>`
         : "";
       const extraParas = item.panelBody
-        ? item.panelBody.map((p) => `<p>${p}</p>`).join("\n            ")
+        ? item.panelBody.map((p) => (p.trim().startsWith("<") ? p : `<p>${p}</p>`)).join("\n            ")
         : "";
       const contactCard = item.contact ? contactCardHTML(item.contact) : "";
       return `<div class="service-expand" data-panel="${item.slug}">
@@ -410,7 +410,11 @@ function renderRichFeaturesBlock(block) {
   const items = block.items
     .map(
       (item) => `<div class="feature-card">
-          <div class="${imageClass}" style="background-image: url('${item.image}')"></div>
+          ${
+            item.video
+              ? `<video class="${imageClass}" src="${item.video}" poster="${item.image || ""}" controls playsinline></video>`
+              : `<div class="${imageClass}" style="background-image: url('${item.image}')"></div>`
+          }
           <h3>${item.name}</h3>
           ${item.subheading ? `<p class="feature-card-subheading">${item.subheading}</p>` : ""}
           <p>${item.body}</p>
@@ -720,6 +724,7 @@ const RICH_BLOCK_RENDERERS = {
   videoCard: renderVideoCardBlock,
   loginMockup: renderLoginMockupBlock,
   contactCard: renderContactCardBlock,
+  categoryCards: renderRichCategoryCardsBlock,
 };
 
 function renderRichCta(cta) {
@@ -737,13 +742,42 @@ function renderRichCta(cta) {
     </div>
   </section>`;
   }
-  return `<section class="dark-section" style="padding: 72px 0; text-align: center;">
+  return `<section class="dark-section"${cta.id ? ` id="${cta.id}"` : ""} style="padding: 72px 0; text-align: center;">
     <div class="container">
       <div class="dark-section-header" style="justify-content: center; margin-bottom: 20px;">
         <h2>${cta.heading}</h2>
       </div>
       <p style="color: rgba(255,255,255,0.7); margin-bottom: 28px;">${cta.body}</p>
       <a href="${cta.buttonHref}" class="btn btn-outline">${cta.buttonLabel} ${ARROW_SVG}</a>
+    </div>
+  </section>`;
+}
+
+const STAR8_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>`;
+
+function renderRichCategoryCardsBlock(block) {
+  const heading = block.heading ? `<h2 class="category-cards-heading">${block.heading}</h2>` : "";
+  const cards = block.cards
+    .map(
+      (card) => `<div class="category-card">
+          <div class="category-card-icon">${STAR8_SVG}</div>
+          <h3 class="category-card-title">${card.title}</h3>
+          <ul class="category-card-list">
+            ${card.items.map((i) => `<li>${i}</li>`).join("\n            ")}
+          </ul>
+        </div>`
+    )
+    .join("\n        ");
+  const contact = block.contactHref
+    ? `<a href="${block.contactHref}" class="arrow-link category-cards-contact">${block.contactLabel || "Contact Us"} ${ARROW_SVG}</a>`
+    : "";
+  return `<section class="services-section category-cards-section">
+    <div class="container">
+      ${heading}
+      <div class="category-cards-grid">
+        ${cards}
+      </div>
+      ${contact}
     </div>
   </section>`;
 }
