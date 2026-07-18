@@ -886,6 +886,26 @@ const SECTORS = [
           subheading: "Timeless transformations, from spatial flow to material selection",
           blocks: [
             {
+              type: "features",
+              heading: "Our People",
+              columns: 2,
+              glow: true,
+              items: [
+                {
+                  name: "Christopher Hodsoll",
+                  subheading: "Interior Designer & Antiques Dealer",
+                  body: "Christopher Hodsoll is a highly acclaimed London-based interior designer and antiques dealer, widely recognised for his idiosyncratic English country house grandeur aesthetic. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Princess Firyal of Jordan, Mick Jagger, Elton John, Sting, and the Rothschild family. He trained under the celebrated decorator Geoffrey Bennison before opening his own shop on Pimlico Road in 1982, and co-founded Soane Britain with Lulu Lytle, named in honour of Sir John Soane. Today, working alongside Alice Constable Maxwell at Studio Hodsoll on Portobello Road, he takes on a small, carefully chosen number of projects, from advising on a single room through to large-scale residential projects across London, the English countryside, and internationally. He is frequently featured in publications including House & Garden, The World of Interiors, and 1stDibs Introspective, and is widely regarded as one of the most respected decorators of his generation. Doranax Design and Furniture works with Christopher on select residential projects, drawing on his eye for proportion, material, and detail.",
+                  image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
+                },
+                {
+                  name: "Anna Sobolewska",
+                  subheading: "Interior Designer, Food & Beverage",
+                  body: "Anna Sobolewska is an interior designer specialising in the food & beverage sector, with nine years of experience shaping some of Birmingham's most talked-about new venues. Her work includes The Rolling Mill in the Jewellery Quarter, transforming a grand industrial space into a vibrant, comfortable bar while honouring its heritage, achieved through authentic materials and considered lighting that let the space's industrial past and its new life sit comfortably together. She also designed the interiors for a striking 1920s-inspired venue, using set-dressing, materiality, and lighting to transport guests into an immersive, era-defined atmosphere.",
+                  image: img("interiordesigner,portrait", 700, 525),
+                },
+              ],
+            },
+            {
               type: "intro",
               paragraphs: [
                 "We deliver full-scheme design for residential and commercial spaces, from spatial planning through to final styling, managed end-to-end including trade sourcing. Every project is treated as bespoke — we don't run a house style that gets applied regardless of the brief.",
@@ -901,25 +921,6 @@ const SECTORS = [
                 { step: "3", name: "Design", body: "Spatial planning, material palette, and furnishing scheme are developed together, not as separate sign-offs." },
                 { step: "4", name: "Develop", body: "Drawings are refined into a buildable specification, with trade sourcing and procurement running in parallel." },
                 { step: "5", name: "Deliver", body: "We manage installation and styling on-site through to handover, so the scheme is finished to the standard it was designed to." },
-              ],
-            },
-            {
-              type: "features",
-              heading: "Our People",
-              columns: 2,
-              items: [
-                {
-                  name: "Christopher Hodsoll",
-                  subheading: "Interior Designer & Antiques Dealer",
-                  body: "Christopher Hodsoll is a highly acclaimed London-based interior designer and antiques dealer, widely recognised for his idiosyncratic English country house grandeur aesthetic. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Princess Firyal of Jordan, Mick Jagger, Elton John, Sting, and the Rothschild family. He trained under the celebrated decorator Geoffrey Bennison before opening his own shop on Pimlico Road in 1982, and co-founded Soane Britain with Lulu Lytle, named in honour of Sir John Soane. Today, working alongside Alice Constable Maxwell at Studio Hodsoll on Portobello Road, he takes on a small, carefully chosen number of projects, from advising on a single room through to large-scale residential projects across London, the English countryside, and internationally. He is frequently featured in publications including House & Garden, The World of Interiors, and 1stDibs Introspective, and is widely regarded as one of the most respected decorators of his generation. Doranax Design and Furniture works with Christopher on select residential projects, drawing on his eye for proportion, material, and detail.",
-                  image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
-                },
-                {
-                  name: "Anna Sobolewska",
-                  subheading: "Interior Designer, Food & Beverage",
-                  body: "Anna Sobolewska is an interior designer specialising in the food & beverage sector, with nine years of experience shaping some of Birmingham's most talked-about new venues. Her work includes The Rolling Mill in the Jewellery Quarter, transforming a grand industrial space into a vibrant, comfortable bar while honouring its heritage, achieved through authentic materials and considered lighting that let the space's industrial past and its new life sit comfortably together. She also designed the interiors for a striking 1920s-inspired venue, using set-dressing, materiality, and lighting to transport guests into an immersive, era-defined atmosphere.",
-                  image: img("interiordesigner,portrait", 700, 525),
-                },
               ],
             },
             {

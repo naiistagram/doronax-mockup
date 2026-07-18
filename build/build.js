@@ -402,10 +402,11 @@ function renderRichIntroBlock(block) {
 
 function renderRichFeaturesBlock(block) {
   const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
+  const imageClass = block.glow ? "feature-card-image feature-card-image-glow" : "feature-card-image";
   const items = block.items
     .map(
       (item) => `<div class="feature-card">
-          <div class="feature-card-image" style="background-image: url('${item.image}')"></div>
+          <div class="${imageClass}" style="background-image: url('${item.image}')"></div>
           <h3>${item.name}</h3>
           ${item.subheading ? `<p class="feature-card-subheading">${item.subheading}</p>` : ""}
           <p>${item.body}</p>
