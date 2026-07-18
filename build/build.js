@@ -390,18 +390,12 @@ function buildServicePage(sector, svc) {
 
 function renderRichIntroBlock(block) {
   const paras = block.paragraphs.map((p) => `<p>${p}</p>`).join("\n          ");
-  // Only ever show 2 images (main + secondary) — a 3rd used to force an
-  // uneven "1 big + 2 stacked" layout with awkward leftover whitespace.
-  const images = block.images
-    .slice(0, 2)
-    .map((src) => `<div class="rich-intro-image" style="background-image: url('${src}')"></div>`)
-    .join("\n          ");
+  // No side images — paired placeholder photos here were frequently irrelevant
+  // (random stock/press results from the loremflickr keyword match) and read
+  // as unprofessional. Full-width text only.
   return `<section class="split-section rich-intro">
     <div class="container">
-      <div class="rich-intro-grid">
-        <div class="rich-intro-text">${paras}</div>
-        <div class="rich-intro-images">${images}</div>
-      </div>
+      <div class="rich-intro-text rich-intro-text-full">${paras}</div>
     </div>
   </section>`;
 }
