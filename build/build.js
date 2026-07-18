@@ -43,7 +43,7 @@ function header() {
 function footer() {
   return `<footer class="site-footer">
     <div class="container">
-      <p><strong>${SITE.name}</strong> — United Kingdom</p>
+      <p><strong>${SITE.name}</strong> — ${SITE.address}</p>
       <p>&copy; 2026 ${SITE.name}. All rights reserved.</p>
     </div>
   </footer>`;
@@ -99,6 +99,8 @@ function buildPillSection(items, basePath) {
         link = "";
       } else if (item.externalUrl) {
         link = `<a href="${item.externalUrl}" target="_blank" rel="noopener" class="arrow-link">Visit Website ${ARROW_SVG}</a>`;
+      } else if (item.href) {
+        link = `<a href="${item.href}" class="arrow-link">View Full Page ${ARROW_SVG}</a>`;
       } else if (!item.noPage) {
         link = `<a href="${basePath}-${item.slug}.html" class="arrow-link">View Full Page ${ARROW_SVG}</a>`;
       }
@@ -412,6 +414,13 @@ function renderRichFeaturesBlock(block) {
           <h3>${item.name}</h3>
           ${item.subheading ? `<p class="feature-card-subheading">${item.subheading}</p>` : ""}
           <p>${item.body}</p>
+          ${
+            item.clientPhotos
+              ? `<div class="feature-card-client-photos">
+            ${item.clientPhotos.map((src) => `<div class="feature-card-client-photo" style="background-image: url('${src}')"></div>`).join("\n            ")}
+          </div>`
+              : ""
+          }
         </div>`
     )
     .join("\n        ");
@@ -544,7 +553,6 @@ function renderRichYachtGridBlock(block) {
             </div>
             <div class="yacht-card-actions">
               <a href="#broker-contact" class="btn btn-outline-navy">Contact</a>
-              <button type="button" class="btn-compare">Add to Compare</button>
               <span class="yacht-card-avatar">${PERSON_SVG}</span>
             </div>
           </div>
@@ -563,17 +571,20 @@ function renderRichYachtGridBlock(block) {
 }
 
 function renderRichBrokerContactBlock(block) {
+  const photo = block.photo
+    ? `<div class="broker-photo" style="background-image: url('${block.photo}')"></div>`
+    : `<div class="broker-photo-placeholder">${PERSON_SVG}<span>Photo Pending</span></div>`;
   return `<section class="broker-contact" id="broker-contact">
     <div class="container">
       <div class="broker-contact-grid">
         <div class="broker-card">
-          <div class="broker-photo-placeholder">${PERSON_SVG}<span>Photo Pending</span></div>
+          ${photo}
           <h3>${block.name}</h3>
           <p class="broker-title">${block.title}</p>
-          <p class="broker-company">${block.company}</p>
+          ${block.company ? `<p class="broker-company">${block.company}</p>` : ""}
           <div class="broker-details">
             <p>${block.location}</p>
-            <p>Office: ${block.officePhone}</p>
+            ${block.officePhone ? `<p>Office: ${block.officePhone}</p>` : ""}
             <p>Mobile: ${block.mobilePhone}</p>
             <p>${block.email ? `<a href="mailto:${block.email}">${block.email}</a>` : "Email — pending"}</p>
           </div>
@@ -838,7 +849,7 @@ function buildContact() {
           <h3>General Enquiries</h3>
           <p><a href="mailto:${SITE.email}">${SITE.email}</a></p>
           <h3>Registered Office</h3>
-          <p>${SITE.name} Ltd<br />United Kingdom</p>
+          <p>${SITE.name} Ltd<br />${SITE.address}</p>
         </div>
         <form class="contact-form" onsubmit="return false;">
           <label>Name<input type="text" name="name" required /></label>
@@ -862,29 +873,36 @@ function run() {
   buildHome();
   let pageCount = 2; // index + contact
 
+  const buildService = (sector, svc) => {
+    if (svc.comingSoon || svc.externalUrl || svc.noPage) return;
+    if (svc.richPage) {
+      buildRichServicePage(sector, svc);
+    } else {
+      buildServicePage(sector, svc);
+    }
+    pageCount += 1;
+
+    (svc.subServices || []).forEach((sub) => {
+      if (sub.comingSoon || sub.externalUrl || sub.noPage) return;
+      if (sub.richPage) {
+        buildRichSubServicePage(sector, svc, sub);
+      } else {
+        buildSubServicePage(sector, svc, sub);
+      }
+      pageCount += 1;
+    });
+  };
+
   SECTORS.forEach((sector) => {
     buildSectorPage(sector);
     pageCount += 1;
 
-    sector.services.forEach((svc) => {
-      if (svc.comingSoon || svc.externalUrl || svc.noPage) return;
-      if (svc.richPage) {
-        buildRichServicePage(sector, svc);
-      } else {
-        buildServicePage(sector, svc);
-      }
-      pageCount += 1;
-
-      (svc.subServices || []).forEach((sub) => {
-        if (sub.comingSoon || sub.externalUrl || sub.noPage) return;
-        if (sub.richPage) {
-          buildRichSubServicePage(sector, svc, sub);
-        } else {
-          buildSubServicePage(sector, svc, sub);
-        }
-        pageCount += 1;
-      });
-    });
+    sector.services.forEach((svc) => buildService(sector, svc));
+    // hiddenServices: pages that still get built (with their own full
+    // subService pill navigation intact) but aren't shown as top-level pills
+    // on the sector page — they're reached via a grouping page instead
+    // (e.g. Vehicle Hire is now reached through the "Events" hub page).
+    (sector.hiddenServices || []).forEach((svc) => buildService(sector, svc));
   });
 
   buildContact();
