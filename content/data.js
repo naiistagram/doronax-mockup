@@ -2,9 +2,15 @@
    The build script (build/build.js) reads this file and generates every
    HTML page. Edit content here; page markup is generated, not hand-written. */
 
+// Placeholder image backend. Previously loremflickr, which silently falls
+// back to the same unrelated "trending" photo (a bronze cat statue) whenever
+// a keyword combo doesn't match well — happened on 20+ pages sitewide.
+// Picsum has no keyword matching (so it can't be "relevant"), but every seed
+// deterministically maps to a real, unique photo with zero collision risk.
+// Replace individual calls with real client photography as it comes in.
 let lock = 1;
 function img(keywords, w = 900, h = 650) {
-  return `https://loremflickr.com/${w}/${h}/${keywords}?lock=${lock++}`;
+  return `https://picsum.photos/seed/${encodeURIComponent(keywords)}-${lock++}/${w}/${h}`;
 }
 
 const SITE = {
@@ -564,17 +570,11 @@ const SECTORS = [
               ],
             },
             {
-              type: "features",
+              type: "contactCard",
               heading: "Your Contact",
-              columns: 1,
-              items: [
-                {
-                  name: "Paul Baker",
-                  subheading: "Doranax Consultancy Group",
-                  body: "Get in touch with Paul to discuss a Management Consultancy engagement.",
-                  image: "images/consultancy/management-consultancy/paul-baker.jpeg",
-                },
-              ],
+              name: "Paul Baker",
+              role: "Doranax Consultancy Group",
+              image: "images/consultancy/management-consultancy/paul-baker.jpeg",
             },
           ],
           cta: {
@@ -1413,7 +1413,8 @@ const SECTORS = [
             noPage: true,
             heroImage: "images/hospitality-events/events-production/event-photography-1.jpg",
             intro: "Coverage that captures the event as it actually happened, not a staged version of it. We provide professional photographers for events of every kind, briefed on your run sheet so the key moments are never missed.",
-            panelBody: ["Discreet on the day, thorough in the edit, delivered fast enough to still feel relevant. Contact Monika to book."],
+            panelBody: ["Discreet on the day, thorough in the edit, delivered fast enough to still feel relevant."],
+            contact: { name: "Monika", role: "Event Photographer" },
           },
         ],
       },
@@ -1448,8 +1449,9 @@ const SECTORS = [
             name: "Dance",
             noPage: true,
             heroImage: "images/hospitality-events/events-lifestyle/dance.jpg",
-            intro: "We run dance classes for private and corporate groups, from beginner sessions to choreographed routines for events. Please contact Anna for dance.",
+            intro: "We run dance classes for private and corporate groups, from beginner sessions to choreographed routines for events.",
             panelBody: ["Sessions run for individuals, private groups, or as part of a wider event booking."],
+            contact: { name: "Anna", role: "Dance Instructor" },
           },
           {
             slug: "photography-courses",

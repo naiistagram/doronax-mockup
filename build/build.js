@@ -108,6 +108,7 @@ function buildPillSection(items, basePath) {
       const extraParas = item.panelBody
         ? item.panelBody.map((p) => `<p>${p}</p>`).join("\n            ")
         : "";
+      const contactCard = item.contact ? contactCardHTML(item.contact) : "";
       return `<div class="service-expand" data-panel="${item.slug}">
         <div class="service-expand-grid">
           <div class="service-expand-image" style="background-image: url('${item.heroImage}')"></div>
@@ -116,6 +117,7 @@ function buildPillSection(items, basePath) {
             <p>${item.intro}</p>
             ${comingSoonBody}
             ${extraParas}
+            ${contactCard}
             ${link}
           </div>
         </div>
@@ -625,6 +627,32 @@ const PLAY_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l
 // Safe pattern for press/third-party video coverage: a styled thumbnail with
 // a play affordance that opens the source article/player in a new tab,
 // rather than embedding or rehosting a video file we don't have rights to.
+// Shared markup for a small contact card (avatar or grey placeholder, name,
+// role) — used both as its own richPage block and inline inside accordion
+// panels wherever copy names a specific point of contact.
+function contactCardHTML(contact) {
+  const avatar = contact.image
+    ? `<div class="contact-card-avatar-image" style="background-image: url('${contact.image}')"></div>`
+    : `<div class="contact-card-avatar-fallback">${PERSON_SVG}</div>`;
+  return `<div class="contact-card">
+          ${avatar}
+          <div class="contact-card-info">
+            <p class="contact-card-name">${contact.name}</p>
+            ${contact.role ? `<p class="contact-card-role">${contact.role}</p>` : ""}
+          </div>
+        </div>`;
+}
+
+function renderContactCardBlock(block) {
+  const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
+  return `<section class="services-section">
+    <div class="container">
+      ${heading}
+      ${contactCardHTML(block)}
+    </div>
+  </section>`;
+}
+
 function renderVideoCardBlock(block) {
   const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
   return `<section class="services-section">
@@ -680,6 +708,7 @@ const RICH_BLOCK_RENDERERS = {
   jobsCta: renderJobsCtaBlock,
   videoCard: renderVideoCardBlock,
   loginMockup: renderLoginMockupBlock,
+  contactCard: renderContactCardBlock,
 };
 
 function renderRichCta(cta) {
