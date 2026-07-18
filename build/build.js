@@ -50,11 +50,10 @@ function footer() {
 }
 
 // Sector-scoped body class, plus the shared "old money" luxury theme for the
-// whole Sports & Wellness sector or any individual item opted in via
-// `luxuryTheme: true` (e.g. Private Members Club).
+// individual item opted in via `luxuryTheme: true` (e.g. Private Members Club).
 function pageBodyClass(sectorSlug, item) {
   const classes = [`sector-${sectorSlug}`];
-  if (sectorSlug === "sports-wellness" || (item && item.luxuryTheme)) classes.push("theme-luxury");
+  if (item && item.luxuryTheme) classes.push("theme-luxury");
   return classes.join(" ");
 }
 
@@ -111,9 +110,10 @@ function buildPillSection(items, basePath) {
         ? item.panelBody.map((p) => (p.trim().startsWith("<") ? p : `<p>${p}</p>`)).join("\n            ")
         : "";
       const contactCard = item.contact ? contactCardHTML(item.contact) : "";
+      const banner = item.comingSoon ? `<span class="coming-soon-banner">${item.comingSoon.headline || "Coming Soon"}</span>` : "";
       return `<div class="service-expand" data-panel="${item.slug}">
         <div class="service-expand-grid">
-          <div class="service-expand-image" style="background-image: url('${item.heroImage}')"></div>
+          <div class="service-expand-image" style="background-image: url('${item.heroImage}')">${banner}</div>
           <div class="service-expand-body">
             <h3>${item.name}</h3>
             <p>${item.intro}</p>
@@ -184,8 +184,10 @@ function backLinkLeft(href, label) {
   </a>`;
 }
 
-function pageHero(image, title, back, subheading) {
+function pageHero(image, title, back, subheading, comingSoon) {
+  const banner = comingSoon ? `<span class="coming-soon-banner">${comingSoon.headline || "Coming Soon"}</span>` : "";
   return `<section class="hero page-hero" style="background-image: url('${image}')">
+    ${banner}
     <div class="container hero-inner">
       ${back}
       <h1>${title}</h1>
@@ -784,7 +786,7 @@ function renderRichCategoryCardsBlock(block) {
 
 function buildRichPage(item, backHref, backLabel, outputSlug, titleContext, sectorSlug) {
   const rp = item.richPage;
-  const hero = pageHero(item.heroImage, item.name, backLinkLeft(backHref, backLabel), rp.subheading);
+  const hero = pageHero(item.heroImage, item.name, backLinkLeft(backHref, backLabel), rp.subheading, item.comingSoon);
 
   const blocks = rp.blocks.map((b) => RICH_BLOCK_RENDERERS[b.type](b)).join("\n");
 
@@ -908,7 +910,7 @@ function run() {
   let pageCount = 2; // index + contact
 
   const buildService = (sector, svc) => {
-    if (svc.comingSoon || svc.externalUrl || svc.noPage) return;
+    if (svc.comingSoon === true || svc.externalUrl || svc.noPage) return;
     if (svc.richPage) {
       buildRichServicePage(sector, svc);
     } else {
@@ -917,7 +919,7 @@ function run() {
     pageCount += 1;
 
     (svc.subServices || []).forEach((sub) => {
-      if (sub.comingSoon || sub.externalUrl || sub.noPage) return;
+      if (sub.comingSoon === true || sub.externalUrl || sub.noPage) return;
       if (sub.richPage) {
         buildRichSubServicePage(sector, svc, sub);
       } else {

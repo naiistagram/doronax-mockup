@@ -36,7 +36,7 @@ const SECTORS = [
   {
     slug: "advertising",
     name: "Doranax Advertising Group",
-    tileImage: img("billboard,advertising"),
+    tileImage: "images/homepage/sectors/advertising.webp",
     heroImage: img("advertising,agency", 1600, 700),
     intro: "Doranax Advertising delivers integrated campaigns across print, digital, and direct channels, helping brands reach the right audience with measurable impact. From concept through execution, our teams combine creative craft with performance-driven strategy.",
     extraBlocks: [
@@ -471,7 +471,8 @@ const SECTORS = [
         slug: "doranax-media",
         name: "Doranax Media",
         heroImage: img("stockmarketchart,finance", 1400, 600),
-        intro: "Coming Soon. Doranax Media is building an economic news app designed to keep you ahead of the market — real-time financial news, market analysis, and economic updates, delivered in one place and built for people who need to stay informed, fast.",
+        comingSoon: { headline: "Coming Soon", body: "Full launch details to follow." },
+        intro: "Doranax Media is building an economic news app designed to keep you ahead of the market — real-time financial news, market analysis, and economic updates, delivered in one place and built for people who need to stay informed, fast.",
         richPage: {
           subheading: "Real-time financial news and market analysis, built for people who need to stay informed, fast",
           blocks: [
@@ -528,7 +529,7 @@ const SECTORS = [
   {
     slug: "consultancy",
     name: "Doranax Consultancy Group",
-    tileImage: img("office,meeting"),
+    tileImage: "images/homepage/sectors/consultancy.jpg",
     heroImage: img("consulting,business", 1600, 700),
     intro: "Doranax Consultancy provides strategic and operational advisory services to businesses navigating growth, change, and international expansion. Our consultants bring hands-on sector experience rather than theoretical frameworks alone.",
     services: [
@@ -850,7 +851,7 @@ const SECTORS = [
   {
     slug: "design-and-furniture",
     name: "Doranax Design and Furniture Group",
-    tileImage: img("furniture,interior"),
+    tileImage: "images/homepage/sectors/design-and-furniture.jpg",
     heroImage: img("furniture,showroom", 1600, 700),
     intro: "Doranax Design and Furniture designs, sources, and manufactures materials and pieces for residential and commercial interiors. We work with natural materials and skilled makers to deliver furnishings and finishes built to last.",
     services: [
@@ -1089,7 +1090,7 @@ const SECTORS = [
             slug: "coffee-tables",
             name: "Coffee Tables",
             noPage: true,
-            heroImage: img("coffeetable,design", 1400, 600),
+            heroImage: "images/design-and-furniture/coffee-tables/coffee-table-1.jpg",
             intro: "A mix of antique, vintage, and bespoke coffee tables spanning periods and materials: solid ebony and Anglo-Indian pieces, draped-and-skirted forms in unexpected materials such as wicker, and custom-made contemporary designs.",
             panelBody: [
               "Pieces are built to Doranax specification in timber, stone, and metal, or sourced as genuine antique and vintage finds.",
@@ -1112,7 +1113,7 @@ const SECTORS = [
   {
     slug: "hospitality-events",
     name: "Doranax Hospitality & Events Group",
-    tileImage: img("event,hospitality"),
+    tileImage: "images/homepage/sectors/hospitality-events.jpg",
     heroImage: img("hotel,event", 1600, 700),
     intro: "Doranax Hospitality & Events operates across property, food & beverage, and live event production, delivering experiences that meet a consistently high standard. We manage every layer of an event or venue, from planning through to delivery.",
     services: [
@@ -1144,7 +1145,8 @@ const SECTORS = [
             name: "Dark Kitchen Hire",
             noPage: true,
             heroImage: "images/hospitality-events/property/dark-kitchen-hire.png",
-            intro: "Coming Soon. Kitchens built to work. Commercial kitchen space for delivery-only food brands, fitted and ready to operate without the overhead of a full restaurant site.",
+            comingSoon: { headline: "Coming Soon", body: "Full details to follow." },
+            intro: "Kitchens built to work. Commercial kitchen space for delivery-only food brands, fitted and ready to operate without the overhead of a full restaurant site.",
             panelBody: ["Space is available on flexible terms, sized for single operators through to multi-brand kitchens. Full details coming soon."],
           },
           {
@@ -1311,7 +1313,8 @@ const SECTORS = [
             name: "Spirits (Gin, Rum and Vodka)",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/spirits.png",
-            intro: "Coming Soon. A small-batch spirits line covering gin, rum, and vodka, currently in development with a distillery partner.",
+            comingSoon: { headline: "Coming Soon", body: "Product details and launch timing will follow." },
+            intro: "A small-batch spirits line covering gin, rum, and vodka, currently in development with a distillery partner.",
             panelBody: ["Product details and launch timing will follow once the partnership and recipes are confirmed."],
           },
           {
@@ -1335,7 +1338,8 @@ const SECTORS = [
             name: "Hamburger and Pizza App",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/hamburger-pizza-app.png",
-            intro: "Coming Soon: Something Tasty Is Cooking. Our Hamburger & Pizza app is currently in the oven — we're cooking up something great, check back soon for the full serving.",
+            comingSoon: { headline: "Coming Soon", body: "Something tasty is cooking — check back soon for the full serving." },
+            intro: "Our Hamburger & Pizza app is currently in the oven — we're cooking up something great.",
             panelBody: ["Want to be first to know when it launches? Get in touch."],
           },
           {
@@ -1380,7 +1384,8 @@ const SECTORS = [
             name: "Breakfast Club",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/breakfast-club.png",
-            intro: "Coming Soon. A breakfast and brunch concept currently in development for our F&B portfolio.",
+            comingSoon: { headline: "Coming Soon", body: "Menu and venue details will be confirmed closer to launch." },
+            intro: "A breakfast and brunch concept currently in development for our F&B portfolio.",
             panelBody: ["Menu and venue details will be confirmed closer to launch."],
           },
           {
@@ -1725,7 +1730,7 @@ const SECTORS = [
   {
     slug: "sports-wellness",
     name: "Doranax Sports & Wellness Group",
-    tileImage: img("yoga,wellness"),
+    tileImage: "images/homepage/sectors/sports-wellness.png",
     heroImage: img("yoga,fitness", 1600, 700),
     intro: "Doranax Sports & Wellness brings together movement, nutrition, and self-care under one roof, built around a genuine wellbeing philosophy rather than a fitness trend. Our offering spans practice, product, and retreat experiences.",
     services: [
@@ -1745,17 +1750,6 @@ const SECTORS = [
                 { name: "Yoga Mat — Blue", image: "images/sports-wellness/yoga/mat-blue.png" },
                 { name: "Multi-Colour Bundle", image: "images/sports-wellness/yoga/mat-bundle-multi.png" },
                 { name: "Cool Tones Bundle", image: "images/sports-wellness/yoga/mat-bundle-cool.png" },
-              ],
-            },
-            {
-              type: "carousel",
-              heading: "Yoga Mat Bundles",
-              items: [
-                { name: "Multi-Colour Bundle", image: "images/sports-wellness/yoga/mat-bundle-multi.png" },
-                { name: "Cool Tones Bundle", image: "images/sports-wellness/yoga/mat-bundle-cool.png" },
-                { name: "Bundle Set — 2", image: "images/sports-wellness/yoga/mat-bundle-2.png" },
-                { name: "Bundle Set — 3", image: "images/sports-wellness/yoga/mat-bundle-3.png" },
-                { name: "Bundle Set — 4", image: "images/sports-wellness/yoga/mat-bundle-4.png" },
               ],
             },
           ],
@@ -1871,10 +1865,10 @@ const SECTORS = [
               columns: 3,
               items: [
                 { name: "Exclusive Access", body: "Our professional partners get access that online shoppers simply don't.", image: "images/sports-wellness/skincare/product-sage-3.png" },
-                { name: "Tailored Strategy", body: "No generic playbooks, every brand gets a distribution approach built around it.", image: img("brandstrategy,skincare", 700, 525) },
-                { name: "Full-Service Support", body: "Training, marketing, brand assets, and our proprietary FLOW scheme, all included.", image: img("skincaretraining,support", 700, 525) },
-                { name: "Trusted Relationships", body: "Built on regular contact, transparency, and a genuine understanding of each partner's goals.", image: img("partnershipmeeting,trust", 700, 525) },
-                { name: "Values-Led Curation", body: "Every brand we represent is chosen for its ethics, sustainability, and efficacy, never just its margins.", image: img("sustainableskincare,ethics", 700, 525) },
+                { name: "Tailored Strategy", body: "No generic playbooks, every brand gets a distribution approach built around it.", image: "images/sports-wellness/skincare/product-sage-1.png" },
+                { name: "Full-Service Support", body: "Training, marketing, brand assets, and our proprietary FLOW scheme, all included.", image: "images/sports-wellness/skincare/product-sage-2.png" },
+                { name: "Trusted Relationships", body: "Built on regular contact, transparency, and a genuine understanding of each partner's goals.", image: "images/sports-wellness/skincare/product-sage-4.png" },
+                { name: "Values-Led Curation", body: "Every brand we represent is chosen for its ethics, sustainability, and efficacy, never just its margins.", image: "images/sports-wellness/skincare/product-sage-1.png" },
               ],
             },
           ],
