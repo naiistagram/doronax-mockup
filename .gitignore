@@ -1,1 +1,11 @@
 .vercel
+.DS_Store
+
+# Raw source material folders (docx/PDF/original assets) — not for the public repo/deploy.
+# Real content has been extracted into content/data.js and images/ already.
+Doranax Advertising Group/
+Doranax Consultancy Group/
+Doranax Design and Furniture/
+Doranax Hospitality and Events/
+Doranax Sports & Wellness Group/
+Homepage/

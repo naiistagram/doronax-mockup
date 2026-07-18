@@ -30,7 +30,7 @@ function head(title) {
 function header() {
   return `<header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo">${LOGO_SVG} ${SITE.name}</a>
+      <a href="index.html" class="logo"><img src="images/homepage/logo.png" alt="${SITE.name}" class="logo-mark" /> ${SITE.name}</a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="index.html#sectors">Sectors</a>
@@ -613,11 +613,28 @@ function buildRichPage(item, backHref, backLabel, outputSlug, titleContext, sect
   const hero = pageHero(item.heroImage, item.name, backLinkLeft(backHref, backLabel), rp.subheading);
 
   const blocks = rp.blocks.map((b) => RICH_BLOCK_RENDERERS[b.type](b)).join("\n");
+
+  let subServices = "";
+  let script = "";
+  if (item.subServices && item.subServices.length) {
+    const { chips, panels } = buildPillSection(item.subServices, outputSlug);
+    subServices = `<section class="services-section front-and-center">
+    <div class="container">
+      <h2>${item.name} Services</h2>
+      <div class="pills-wrap" data-pills>
+        ${chips}
+      </div>
+      ${panels}
+    </div>
+  </section>`;
+    script = PILLS_SCRIPT;
+  }
+
   const cta = rp.cta ? renderRichCta(rp.cta) : "";
 
   fs.writeFileSync(
     path.join(ROOT, `${outputSlug}.html`),
-    page(`${item.name} — ${titleContext}`, hero + blocks + cta, "", `sector-${sectorSlug}`)
+    page(`${item.name} — ${titleContext}`, hero + blocks + subServices + cta, script, `sector-${sectorSlug}`)
   );
 }
 
