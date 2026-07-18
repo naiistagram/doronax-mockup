@@ -1595,7 +1595,7 @@ body.theme-luxury .pill:hover {
   border-color: var(--luxury-gold);
 }
 
-body.theme-luxury .split-section,
+body.theme-luxury .split-section:not(.compact),
 body.theme-luxury .services-section,
 body.theme-luxury .dark-section {
   padding: 96px 0;
