@@ -11,7 +11,7 @@ const SITE = {
   name: "Doranax Albion Holdings",
   tagline: "A collective of businesses built on craft, trust, and growth.",
   email: "info@doranaxalbionholdings.com",
-  heroImage: "images/homepage/globe-hero.png",
+  heroImage: "images/homepage/globe-hero.jpg",
   stats: [
     { key: "sectors", value: "5", label: "sectors" },
     { key: "services", value: "25+", label: "services" },
