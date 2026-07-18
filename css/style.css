@@ -1283,6 +1283,206 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.95rem;
 }
 
+/* ---------- Login mockup (gated-area design preview, non-functional) ---------- */
+
+.login-mockup-section {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 72vh;
+}
+
+.login-mockup-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.login-mockup-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: var(--off-white);
+}
+
+.login-mockup-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-mockup-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-bottom: 14px;
+}
+
+.login-mockup-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+
+.login-mockup-body {
+  color: var(--gray);
+  margin-bottom: 32px;
+  font-size: 0.98rem;
+}
+
+.login-mockup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.login-mockup-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.login-mockup-form input {
+  padding: 13px 14px;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: var(--font);
+}
+
+.login-mockup-form .btn {
+  margin-top: 6px;
+  justify-content: center;
+}
+
+.login-mockup-footnote {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Old-money treatment when this page opts into the luxury theme */
+body.theme-luxury .login-mockup-panel {
+  background: var(--luxury-cream);
+}
+
+body.theme-luxury .login-mockup-card h2 {
+  font-family: var(--font-display);
+  color: var(--luxury-ink);
+}
+
+body.theme-luxury .login-mockup-eyebrow {
+  color: var(--luxury-gold);
+  font-weight: 600;
+}
+
+body.theme-luxury .login-mockup-form label {
+  color: var(--luxury-ink);
+}
+
+body.theme-luxury .login-mockup-form input {
+  background: transparent;
+  border: 1px solid var(--luxury-gold);
+  border-radius: 2px;
+}
+
+body.theme-luxury .login-mockup-form .btn {
+  background: var(--luxury-ink);
+  border-radius: 2px;
+}
+
+body.theme-luxury .login-mockup-image {
+  filter: saturate(0.85) sepia(0.08);
+}
+
+@media (max-width: 900px) {
+  .login-mockup-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .login-mockup-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---------- Video card (safe third-party video link-out) ---------- */
+
+.video-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.video-card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+}
+
+.video-card-thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 31, 68, 0.25);
+}
+
+.video-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  transition: transform 0.2s ease;
+}
+
+.video-card-play svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 3px;
+}
+
+.video-card:hover .video-card-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-card-body {
+  padding: 24px 32px;
+}
+
+.video-card-label {
+  color: var(--gray);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.video-card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+@media (max-width: 720px) {
+  .video-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Logo grid (Advertising sectors/suppliers) ---------- */
 
 .logo-grid-section h2 {
@@ -1324,11 +1524,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- Sports & Wellness — luxury / old-money treatment ---------- */
-/* Scoped to body.sector-sports-wellness so every page in the sector (hub,
+/* Scoped to body.theme-luxury so every page in the sector (hub,
    service, sub-service, rich) picks up the same warmer, more editorial
    styling without touching the shared default theme used elsewhere. */
 
-body.sector-sports-wellness {
+body.theme-luxury {
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --luxury-cream: #F7F3EC;
   --luxury-ink: #1C1A15;
@@ -1338,26 +1538,26 @@ body.sector-sports-wellness {
   color: var(--luxury-ink);
 }
 
-body.sector-sports-wellness .site-header {
+body.theme-luxury .site-header {
   background: var(--luxury-cream);
   border-bottom: 1px solid var(--luxury-gold);
 }
 
-body.sector-sports-wellness .logo,
-body.sector-sports-wellness .site-nav a {
+body.theme-luxury .logo,
+body.theme-luxury .site-nav a {
   color: var(--luxury-ink);
 }
 
-body.sector-sports-wellness h1,
-body.sector-sports-wellness h2,
-body.sector-sports-wellness h3 {
+body.theme-luxury h1,
+body.theme-luxury h2,
+body.theme-luxury h3 {
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
-body.sector-sports-wellness .split-text h2::after,
-body.sector-sports-wellness .section-heading h2::after {
+body.theme-luxury .split-text h2::after,
+body.theme-luxury .section-heading h2::after {
   content: "";
   display: block;
   width: 64px;
@@ -1366,49 +1566,49 @@ body.sector-sports-wellness .section-heading h2::after {
   margin-top: 14px;
 }
 
-body.sector-sports-wellness .arrow-link,
-body.sector-sports-wellness .split-text h2,
-body.sector-sports-wellness .section-heading h2 {
+body.theme-luxury .arrow-link,
+body.theme-luxury .split-text h2,
+body.theme-luxury .section-heading h2 {
   color: var(--luxury-ink);
 }
 
-body.sector-sports-wellness .btn {
+body.theme-luxury .btn {
   background: var(--luxury-accent);
   border-radius: 2px;
 }
 
-body.sector-sports-wellness .btn-outline {
+body.theme-luxury .btn-outline {
   border-color: var(--luxury-gold);
   color: var(--luxury-ink);
 }
 
-body.sector-sports-wellness .dark-section {
+body.theme-luxury .dark-section {
   background: var(--luxury-ink);
 }
 
-body.sector-sports-wellness .pill.active,
-body.sector-sports-wellness .pill:hover {
+body.theme-luxury .pill.active,
+body.theme-luxury .pill:hover {
   border-color: var(--luxury-gold);
 }
 
-body.sector-sports-wellness .split-section,
-body.sector-sports-wellness .services-section,
-body.sector-sports-wellness .dark-section {
+body.theme-luxury .split-section,
+body.theme-luxury .services-section,
+body.theme-luxury .dark-section {
   padding: 96px 0;
 }
 
-body.sector-sports-wellness .split-image-main,
-body.sector-sports-wellness .split-image-secondary,
-body.sector-sports-wellness .feature-card-image,
-body.sector-sports-wellness .service-expand-image {
+body.theme-luxury .split-image-main,
+body.theme-luxury .split-image-secondary,
+body.theme-luxury .feature-card-image,
+body.theme-luxury .service-expand-image {
   filter: saturate(0.85) sepia(0.08);
   border: 1px solid var(--luxury-gold);
 }
 
-body.sector-sports-wellness .hero {
+body.theme-luxury .hero {
   filter: saturate(0.85) sepia(0.08);
 }
 
-body.sector-sports-wellness .sector-tile-label {
+body.theme-luxury .sector-tile-label {
   font-family: var(--font-display);
 }

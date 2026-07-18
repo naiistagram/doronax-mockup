@@ -49,6 +49,15 @@ function footer() {
   </footer>`;
 }
 
+// Sector-scoped body class, plus the shared "old money" luxury theme for the
+// whole Sports & Wellness sector or any individual item opted in via
+// `luxuryTheme: true` (e.g. Private Members Club).
+function pageBodyClass(sectorSlug, item) {
+  const classes = [`sector-${sectorSlug}`];
+  if (sectorSlug === "sports-wellness" || (item && item.luxuryTheme)) classes.push("theme-luxury");
+  return classes.join(" ");
+}
+
 function page(title, body, extraScript, bodyClass) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -314,7 +323,7 @@ function buildSectorPage(sector) {
 
   fs.writeFileSync(
     path.join(ROOT, `${sector.slug}.html`),
-    page(sector.name, hero + intro + featured + services + extra + cta, PILLS_SCRIPT, `sector-${sector.slug}`)
+    page(sector.name, hero + intro + featured + services + extra + cta, PILLS_SCRIPT, pageBodyClass(sector.slug, sector))
   );
 }
 
@@ -369,7 +378,7 @@ function buildServicePage(sector, svc) {
 
   fs.writeFileSync(
     path.join(ROOT, `${sector.slug}-${svc.slug}.html`),
-    page(`${svc.name} — ${sector.name}`, hero + featured + subServices + body + enquiry, script, `sector-${sector.slug}`)
+    page(`${svc.name} — ${sector.name}`, hero + featured + subServices + body + enquiry, script, pageBodyClass(sector.slug, svc))
   );
 }
 
@@ -572,6 +581,51 @@ function renderJobsCtaBlock(block) {
   </section>`;
 }
 
+const PLAY_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
+
+// Safe pattern for press/third-party video coverage: a styled thumbnail with
+// a play affordance that opens the source article/player in a new tab,
+// rather than embedding or rehosting a video file we don't have rights to.
+function renderVideoCardBlock(block) {
+  const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
+  return `<section class="services-section">
+    <div class="container">
+      ${heading}
+      <a href="${block.href}" target="_blank" rel="noopener" class="video-card">
+        <div class="video-card-thumb" style="background-image: url('${block.thumbnail}')">
+          <span class="video-card-play">${PLAY_SVG}</span>
+        </div>
+        <div class="video-card-body">
+          <p class="video-card-label">${block.label || "Watch"}</p>
+          <p class="video-card-title">${block.title}</p>
+        </div>
+      </a>
+    </div>
+  </section>`;
+}
+
+// A non-functional mockup login screen for a gated area (e.g. Private
+// Members Club) — design-only, no real authentication, form submit is a
+// no-op like every other form on the site.
+function renderLoginMockupBlock(block) {
+  return `<section class="login-mockup-section">
+    <div class="login-mockup-image" style="background-image: url('${block.image}')"></div>
+    <div class="login-mockup-panel">
+      <div class="login-mockup-card">
+        <p class="login-mockup-eyebrow">${block.eyebrow || "Members Only"}</p>
+        <h2>${block.heading}</h2>
+        <p class="login-mockup-body">${block.body}</p>
+        <form class="login-mockup-form" onsubmit="return false;">
+          <label>${block.usernameLabel || "Membership Email"}<input type="email" name="email" required /></label>
+          <label>${block.passwordLabel || "Password"}<input type="password" name="password" required /></label>
+          <button type="submit" class="btn">${block.buttonLabel || "Sign In"}</button>
+        </form>
+        <p class="login-mockup-footnote">${block.footnote || ""}</p>
+      </div>
+    </div>
+  </section>`;
+}
+
 const RICH_BLOCK_RENDERERS = {
   intro: renderRichIntroBlock,
   features: renderRichFeaturesBlock,
@@ -583,6 +637,8 @@ const RICH_BLOCK_RENDERERS = {
   logoGrid: renderLogoGridBlock,
   supplierGrid: renderLogoGridBlock,
   jobsCta: renderJobsCtaBlock,
+  videoCard: renderVideoCardBlock,
+  loginMockup: renderLoginMockupBlock,
 };
 
 function renderRichCta(cta) {
@@ -637,7 +693,7 @@ function buildRichPage(item, backHref, backLabel, outputSlug, titleContext, sect
 
   fs.writeFileSync(
     path.join(ROOT, `${outputSlug}.html`),
-    page(`${item.name} — ${titleContext}`, hero + blocks + subServices + cta, script, `sector-${sectorSlug}`)
+    page(`${item.name} — ${titleContext}`, hero + blocks + subServices + cta, script, pageBodyClass(sectorSlug, item))
   );
 }
 
@@ -696,7 +752,7 @@ function buildSubServicePage(sector, svc, sub) {
 
   fs.writeFileSync(
     path.join(ROOT, `${sector.slug}-${svc.slug}-${sub.slug}.html`),
-    page(`${sub.name} — ${svc.name} — ${sector.name}`, hero + body + enquiry, "", `sector-${sector.slug}`)
+    page(`${sub.name} — ${svc.name} — ${sector.name}`, hero + body + enquiry, "", pageBodyClass(sector.slug, sub))
   );
 }
 

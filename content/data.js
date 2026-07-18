@@ -440,16 +440,58 @@ const SECTORS = [
       {
         slug: "doranax-media",
         name: "Doranax Media",
-        heroImage: img("newsapp,media", 1400, 600),
-        intro: "Coming Soon. Doranax Media is building an economic news app designed to keep you ahead of the market — real-time financial news, market analysis, and economic updates, delivered in one place and built for people who need to stay informed, fast. Launching soon.",
-        gallery: [img("newsapp,phone"), img("economicnews,chart")],
+        heroImage: img("stockmarketchart,finance", 1400, 600),
+        intro: "Coming Soon. Doranax Media is building an economic news app designed to keep you ahead of the market — real-time financial news, market analysis, and economic updates, delivered in one place and built for people who need to stay informed, fast.",
+        richPage: {
+          subheading: "Real-time financial news and market analysis, built for people who need to stay informed, fast",
+          blocks: [
+            {
+              type: "features",
+              heading: "What's Coming",
+              columns: 3,
+              items: [
+                { name: "Real-Time Financial News", body: "Market-moving news delivered as it happens, not hours later.", image: img("financialnews,stockticker", 700, 525) },
+                { name: "Market Analysis", body: "Analysis built to help you understand the move, not just see the number.", image: img("marketanalysis,tradingfloor", 700, 525) },
+                { name: "Economic Updates", body: "The economic data that actually moves markets, in one focused feed.", image: img("economicdata,chart", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Want to Know When We Launch?",
+            body: "Get in touch and we'll let you know as soon as Doranax Media is live.",
+            buttonLabel: "Notify Me",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
       {
         slug: "doranax-booster",
         name: "Doranax Booster",
         heroImage: img("websitetraffic,growth", 1400, 600),
         intro: "Doranax Booster increases the traffic and visibility of online companies through targeted paid traffic strategies — helping businesses get seen by the right audience, drive qualified visitors to their site, and grow their online presence with campaigns built for real, measurable results.",
-        gallery: [img("trafficgrowth,analytics"), img("visibility,search")],
+        richPage: {
+          subheading: "Increasing the traffic and visibility of online companies",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Do",
+              columns: 3,
+              items: [
+                { name: "Targeted Paid Traffic", body: "Paid traffic strategies built around the audience most likely to convert, not just clicks.", image: img("paidtraffic,digitalads", 700, 525) },
+                { name: "Visibility Strategy", body: "Getting your business seen where the right audience is already looking.", image: img("onlinevisibility,search", 700, 525) },
+                { name: "Measurable Results", body: "Campaigns built and reported against real numbers, not vanity metrics.", image: img("analyticsdashboard,growth", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Ready to Boost Your Traffic?",
+            body: "Get in touch and our team will scope a campaign around your business.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
     ],
   },
@@ -463,9 +505,30 @@ const SECTORS = [
       {
         slug: "software",
         name: "Software",
-        heroImage: img("coding,software", 1400, 600),
+        heroImage: img("softwareteam,office", 1400, 600),
         intro: "We advise on and deliver bespoke software solutions, from systems architecture through to implementation and support. Our focus is on practical tools that solve real operational bottlenecks.",
-        gallery: [img("developer,computer"), img("code,screen")],
+        richPage: {
+          subheading: "Bespoke software, built around real operational bottlenecks",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Do",
+              columns: 3,
+              items: [
+                { name: "Systems Architecture", body: "Architecture decisions made around how the business actually operates, not a generic tech-stack default.", image: img("systemsarchitecture,whiteboard", 700, 525) },
+                { name: "Bespoke Development", body: "Custom-built tools scoped to solve a specific operational problem, not an off-the-shelf compromise.", image: img("softwaredeveloper,coding", 700, 525) },
+                { name: "Implementation & Support", body: "Hands-on delivery and ongoing support once a tool is live, not a handover and disappearance.", image: img("techsupport,office", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Have a Software Problem to Solve?",
+            body: "Get in touch and our team will scope the technical approach with you.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
       {
         slug: "management-consultancy",
@@ -678,16 +741,58 @@ const SECTORS = [
       {
         slug: "concierge",
         name: "Concierge",
-        heroImage: img("concierge,hotel", 1400, 600),
+        heroImage: img("conciergedesk,luxuryhotel", 1400, 600),
         intro: "A dedicated concierge service for clients requiring bespoke arrangements — travel, accommodation, and specialist procurement — handled discreetly and efficiently by a single point of contact.",
-        gallery: [img("conciergedesk,luxury"), img("travelplanning,itinerary")],
+        richPage: {
+          subheading: "Bespoke arrangements, handled discreetly by a single point of contact",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Arrange",
+              columns: 3,
+              items: [
+                { name: "Travel & Accommodation", body: "Itineraries and accommodation arranged around the client, not a fixed package.", image: img("privatevilla,luxurytravel", 700, 525) },
+                { name: "Specialist Procurement", body: "Sourcing for hard-to-find items and services, handled quietly and efficiently.", image: img("personalshopper,luxury", 700, 525) },
+                { name: "Ongoing Requests", body: "A single point of contact for whatever comes up next, not a one-off booking service.", image: img("conciergecall,service", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Need Something Arranged?",
+            body: "Get in touch and our concierge team will take it from there.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
       {
         slug: "china",
         name: "China",
-        heroImage: img("shanghai,china", 1400, 600),
+        heroImage: img("shanghai,skyline", 1400, 600),
         intro: "Our China desk supports clients sourcing, manufacturing, or expanding into the Chinese market, backed by on-the-ground relationships and language capability rather than a remote advisory service.",
-        gallery: [img("shenzhen,factory"), img("chinabusiness,meeting")],
+        richPage: {
+          subheading: "On-the-ground support for sourcing, manufacturing, and market entry",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Support",
+              columns: 3,
+              items: [
+                { name: "Sourcing & Manufacturing", body: "On-the-ground supplier and factory relationships, not a directory of contacts.", image: img("chinafactory,manufacturing", 700, 525) },
+                { name: "Market Entry", body: "Practical support for businesses entering the Chinese market for the first time.", image: img("chinabusiness,meeting", 700, 525) },
+                { name: "Language & Relationships", body: "Language capability and existing relationships that a remote advisory desk can't replicate.", image: img("shenzhen,businessdistrict", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Looking to Enter the Chinese Market?",
+            body: "Get in touch and our China desk will scope the approach with you.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
     ],
   },
@@ -817,6 +922,18 @@ const SECTORS = [
                 },
               ],
             },
+            {
+              // Source docx flagged this as needing a real embeddable video URL
+              // (iframe/mp4), which the article page itself doesn't provide — using
+              // the doc's own recommended safe fallback: a thumbnail link-out card
+              // rather than embedding or rehosting Reach plc's video file.
+              type: "videoCard",
+              heading: "In the Press",
+              label: "Watch — Birmingham Mail",
+              title: "First Look Inside the New 1920s Venue",
+              thumbnail: img("1920svenue,interior", 1000, 560),
+              href: "https://www.birminghammail.co.uk/whats-on/food-drink-news/first-look-inside-new-1920s-22276734",
+            },
           ],
           cta: {
             heading: "Planning an Interior Design Project?",
@@ -875,16 +992,58 @@ const SECTORS = [
       {
         slug: "yacht-and-private-jet-interior-design",
         name: "Yacht and Private Jet Interior Design",
-        heroImage: img("yachtinterior,luxury", 1400, 600),
+        heroImage: img("yachtinterior,luxurycabin", 1400, 600),
         intro: "We design interiors for yachts and private jets, applying the same standard of material selection and spatial planning as our residential work to spaces with far tighter constraints.",
-        gallery: [img("yachtcabin,interior"), img("jetcabin,luxury")],
+        richPage: {
+          subheading: "Residential-standard material selection, applied to far tighter constraints",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Do",
+              columns: 3,
+              items: [
+                { name: "Yacht Interiors", body: "Cabin and saloon interiors designed around weight, space, and marine-grade material constraints.", image: img("yachtsaloon,interior", 700, 525) },
+                { name: "Private Jet Interiors", body: "Cabin schemes built for a space where every inch and every gram is accounted for.", image: img("privatejetcabin,luxury", 700, 525) },
+                { name: "Material Specification", body: "Materials selected for durability at altitude or at sea, without looking like it.", image: img("marinematerials,upholstery", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Planning a Yacht or Jet Interior?",
+            body: "Get in touch and our team will talk through scope and constraints for your project.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
       {
         slug: "drinks-cabinet",
         name: "Drinks Cabinet",
-        heroImage: img("drinkscabinet,furniture", 1400, 600),
+        heroImage: img("barcabinet,woodfurniture", 1400, 600),
         intro: "Our bespoke drinks cabinets are designed and built to order, from compact home-bar pieces to full entertaining units finished in a choice of woods and metals.",
-        gallery: [img("barcabinet,wood"), img("homedrinksbar,furniture")],
+        richPage: {
+          subheading: "Built to order, from compact home-bar pieces to full entertaining units",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Build",
+              columns: 3,
+              items: [
+                { name: "Compact Home-Bar Pieces", body: "Smaller cabinets built to fit a specific corner or alcove without compromising on finish.", image: img("homebar,cabinet", 700, 525) },
+                { name: "Full Entertaining Units", body: "Larger drinks cabinets built as a genuine piece of furniture, not an afterthought.", image: img("entertainingunit,furniture", 700, 525) },
+                { name: "Wood & Metal Finishes", body: "A choice of timbers and metal detailing, matched to the room it's going into.", image: img("woodmetalfinish,furniture", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Commissioning a Drinks Cabinet?",
+            body: "Get in touch and our team will talk through size, finish, and timeline.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
       {
         slug: "bronze-coffee-tables-wooden-boxes",
@@ -1050,7 +1209,6 @@ const SECTORS = [
       },
       {
         slug: "yacht-sale",
-        featured: true,
         name: "Yacht Sale",
         heroImage: img("yachtforsale,marina", 1400, 600),
         intro: "Browse a selection of yachts currently available through our network, and get in touch with our brokerage to discuss options.",
@@ -1308,16 +1466,6 @@ const SECTORS = [
             intro: "Our beginner coffee courses introduce guests to brewing fundamentals, tasting, and basic latte art in a relaxed setting.",
             panelBody: ["A relaxed introduction to brewing and tasting, aimed at enthusiasts rather than trade professionals."],
           },
-          {
-            slug: "private-members-club",
-            name: "Private Members Club",
-            noPage: true,
-            // Design brief: "old money" aesthetic, not tech-startup styling — carries through
-            // via the shared sector luxury CSS scoping rather than one-off page styles.
-            heroImage: img("membersclub,lounge", 1400, 600),
-            intro: "Our private members club offers a discreet space and calendar of events for members, with reciprocal access across partner venues.",
-            panelBody: ["Membership includes reciprocal access across partner venues and a regular calendar of members' events."],
-          },
         ],
       },
       {
@@ -1429,9 +1577,60 @@ const SECTORS = [
       {
         slug: "workwear",
         name: "Workwear",
-        heroImage: img("uniform,staff", 1400, 600),
+        heroImage: img("hospitalitystaff,uniform", 1400, 600),
         intro: "We supply branded and functional workwear for hospitality teams, balancing durability with a presentation standard that reflects the venues we serve.",
-        gallery: [img("chef,uniform"), img("hotelstaff,waiter")],
+        richPage: {
+          subheading: "Durability and presentation standard that reflects the venues we serve",
+          blocks: [
+            {
+              type: "features",
+              heading: "What We Supply",
+              columns: 3,
+              items: [
+                { name: "Kitchen & Chef Wear", body: "Durable, heat- and stain-resistant kitchen wear built for a full service, not a photoshoot.", image: img("chefwhites,kitchen", 700, 525) },
+                { name: "Front-of-House Uniform", body: "Presentation-standard uniform for guest-facing teams, branded to the venue.", image: img("hotelstaff,uniform", 700, 525) },
+                { name: "Branded Workwear", body: "Custom branding applied to workwear across a team, consistent venue to venue.", image: img("brandeduniform,staff", 700, 525) },
+              ],
+            },
+          ],
+          cta: {
+            heading: "Outfitting a Team?",
+            body: "Get in touch and our team will scope sizing, branding, and turnaround.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
+      },
+      {
+        slug: "private-members-club",
+        name: "Private Members Club",
+        luxuryTheme: true,
+        heroImage: img("membersclub,library", 1400, 600),
+        intro: "A discreet space and calendar of events for members, with reciprocal access across partner venues.",
+        richPage: {
+          subheading: "A discreet space for members, with reciprocal access across partner venues",
+          blocks: [
+            {
+              type: "loginMockup",
+              eyebrow: "Members Only",
+              heading: "Welcome Back",
+              body: "Sign in with your membership details to view upcoming events, reciprocal venues, and your reservations.",
+              image: img("gentlemensclub,library", 1400, 1400),
+              usernameLabel: "Membership Email",
+              passwordLabel: "Password",
+              buttonLabel: "Sign In",
+              footnote: "Not a member? Get in touch to enquire about membership.",
+            },
+          ],
+          cta: {
+            heading: "Interested in Membership?",
+            body: "Get in touch to find out more about joining the Private Members Club.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
+        },
       },
     ],
   },
