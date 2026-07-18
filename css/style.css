@@ -1,4 +1,4 @@
-/* Doronax Holdings — shared styles
+/* Doranax Albion Holdings — shared styles
    Design system: navy (#0A1F44) + white + light gray. Flat, no shadows/gradients.
    Big bold headlines, rectangular buttons (4-6px radius), arrow links, line-art icons. */
 
@@ -234,17 +234,24 @@ a { color: inherit; text-decoration: none; }
 /* Smaller hero used on sector/service/contact pages (no stat row) */
 
 .page-hero {
-  min-height: 34vh;
+  min-height: 26vh;
   align-items: flex-end;
 }
 
 .page-hero .hero-inner {
-  padding: 40px 0 36px;
+  padding: 28px 0 24px;
 }
 
 .page-hero h1 {
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   margin-bottom: 0;
+}
+
+.page-hero-subheading {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 640px;
+  margin-top: 12px;
 }
 
 .page-hero .back-link {
@@ -254,11 +261,11 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Content split section (text + asymmetric image stack) ---------- */
 
 .split-section {
-  padding: 56px 0;
+  padding: 36px 0;
 }
 
 .split-section.compact {
-  padding: 36px 0 8px;
+  padding: 24px 0 8px;
 }
 
 .split-section.compact .split-text p {
@@ -436,11 +443,11 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Sector page: services (click-to-expand chips) ---------- */
 
 .services-section {
-  padding: 24px 0 56px;
+  padding: 16px 0 32px;
 }
 
 .services-section.front-and-center {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .services-section h2 {
@@ -490,10 +497,29 @@ a { color: inherit; text-decoration: none; }
   transform: rotate(180deg);
 }
 
+.pill.pill-disabled {
+  cursor: default;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.badge-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--gray-light);
+  color: var(--navy);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
 .service-expand {
   display: none;
-  margin-top: 36px;
-  padding: 44px;
+  margin-top: 20px;
+  padding: 32px;
   background: var(--off-white);
   border-radius: var(--radius);
 }
@@ -567,6 +593,449 @@ a { color: inherit; text-decoration: none; }
   color: var(--gray);
   margin: 0 24px 24px;
   font-size: 0.95rem;
+}
+
+/* ---------- Featured showcase (large hero-style highlight) ---------- */
+
+.featured-showcase-section {
+  padding-top: 0;
+}
+
+.featured-showcase {
+  position: relative;
+  min-height: 44vh;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: var(--white);
+}
+
+.featured-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,21,48,0.1) 0%, rgba(7,21,48,0.9) 100%);
+}
+
+.featured-showcase-inner {
+  position: relative;
+  z-index: 1;
+  padding: 48px 48px 44px;
+  max-width: 620px;
+}
+
+.featured-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 12px;
+}
+
+.featured-showcase-inner h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.featured-showcase-inner p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+/* ---------- Rich service page blocks ---------- */
+
+.rich-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.rich-intro-text p {
+  color: var(--gray);
+  margin-bottom: 18px;
+}
+
+.rich-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-intro-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.rich-intro-images .rich-intro-image:first-child:nth-last-child(3) {
+  grid-column: span 2;
+}
+
+.rich-intro-image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center;
+}
+
+.rich-description p {
+  color: var(--gray);
+  max-width: 760px;
+  margin-bottom: 16px;
+  font-size: 1.02rem;
+}
+
+.rich-description p:last-child {
+  margin-bottom: 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--feature-cols, 4), 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--off-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.feature-card-image {
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  margin: 18px 20px 4px;
+}
+
+.feature-card-subheading {
+  color: var(--navy-mid);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 20px 8px;
+}
+
+.feature-card p:not(.feature-card-subheading) {
+  color: var(--gray);
+  margin: 0 20px 20px;
+  font-size: 0.92rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.process-step {
+  padding: 28px 24px;
+  background: var(--off-white);
+  border-radius: var(--radius);
+}
+
+.process-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.process-step h3 {
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  color: var(--gray);
+  font-size: 0.92rem;
+}
+
+/* ---------- Product grid (e.g. Yoga Mats) ---------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 20px;
+}
+
+.product-card-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--off-white);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius);
+}
+
+.product-sold-out {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(10,31,68,0.85);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+}
+
+.product-card-name {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 16px 0 4px;
+}
+
+.product-card-price {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* ---------- Yacht listing grid ---------- */
+
+.yacht-grid-intro {
+  color: var(--gray);
+  max-width: 640px;
+  margin: -16px 0 28px;
+}
+
+.yacht-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.yacht-card {
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.yacht-card-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+}
+
+.yacht-card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+}
+
+.yacht-card-body {
+  padding: 24px;
+}
+
+.yacht-card-type {
+  color: var(--navy-mid);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.yacht-card-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.yacht-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.yacht-card-location {
+  color: #2563eb;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.yacht-card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-light);
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.yacht-spec {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.yacht-spec svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.yacht-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.btn-outline-navy {
+  background: transparent;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.btn-outline-navy:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-compare {
+  background: var(--gray-light);
+  color: var(--navy);
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.yacht-card-avatar {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  flex-shrink: 0;
+}
+
+.yacht-card-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Broker contact ---------- */
+
+.broker-contact {
+  padding: 56px 0;
+  background: var(--off-white);
+  scroll-margin-top: 100px;
+}
+
+.broker-contact-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.broker-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+}
+
+.broker-photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--gray-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 auto 20px;
+  color: var(--gray);
+}
+
+.broker-photo-placeholder svg {
+  width: 32px;
+  height: 32px;
+}
+
+.broker-photo-placeholder span {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.broker-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.broker-title,
+.broker-company {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.broker-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-light);
+  text-align: left;
+}
+
+.broker-details p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.broker-details p:last-child {
+  margin-bottom: 0;
+}
+
+.broker-form h3 {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
 }
 
 /* ---------- Service page gallery ---------- */
@@ -720,6 +1189,25 @@ a { color: inherit; text-decoration: none; }
     grid-column: span 1;
     aspect-ratio: 4 / 3;
   }
+  .rich-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .yacht-grid {
+    grid-template-columns: 1fr;
+  }
+  .broker-contact-grid {
+    grid-template-columns: 1fr;
+  }
   .additional-grid {
     grid-template-columns: 1fr;
   }
@@ -761,12 +1249,169 @@ a { color: inherit; text-decoration: none; }
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+  .feature-grid,
+  .process-grid,
+  .rich-intro-images {
+    grid-template-columns: 1fr;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .yacht-card-actions {
+    flex-wrap: wrap;
+  }
+  .featured-showcase-inner {
+    padding: 32px 24px 28px;
+  }
+  .rich-intro-images .rich-intro-image:first-child:nth-last-child(3) {
+    grid-column: span 1;
+  }
   .split-section,
   .dark-section,
   .services-section {
-    padding: 64px 0;
+    padding: 40px 0;
   }
   .stat {
     width: 100%;
   }
+}
+
+/* ---------- Coming Soon (in-page panel content) ---------- */
+
+.coming-soon-note {
+  background: var(--off-white);
+  border-left: 3px solid var(--navy);
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Logo grid (Advertising sectors/suppliers) ---------- */
+
+.logo-grid-section h2 {
+  margin-bottom: 28px;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.logo-tile {
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.logo-tile-image {
+  height: 56px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+  opacity: 0.75;
+  margin-bottom: 12px;
+}
+
+.logo-tile p {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+@media (max-width: 720px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Sports & Wellness — luxury / old-money treatment ---------- */
+/* Scoped to body.sector-sports-wellness so every page in the sector (hub,
+   service, sub-service, rich) picks up the same warmer, more editorial
+   styling without touching the shared default theme used elsewhere. */
+
+body.sector-sports-wellness {
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --luxury-cream: #F7F3EC;
+  --luxury-ink: #1C1A15;
+  --luxury-accent: #2F3B2A;
+  --luxury-gold: #B08D4F;
+  background: var(--luxury-cream);
+  color: var(--luxury-ink);
+}
+
+body.sector-sports-wellness .site-header {
+  background: var(--luxury-cream);
+  border-bottom: 1px solid var(--luxury-gold);
+}
+
+body.sector-sports-wellness .logo,
+body.sector-sports-wellness .site-nav a {
+  color: var(--luxury-ink);
+}
+
+body.sector-sports-wellness h1,
+body.sector-sports-wellness h2,
+body.sector-sports-wellness h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+body.sector-sports-wellness .split-text h2::after,
+body.sector-sports-wellness .section-heading h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--luxury-gold);
+  margin-top: 14px;
+}
+
+body.sector-sports-wellness .arrow-link,
+body.sector-sports-wellness .split-text h2,
+body.sector-sports-wellness .section-heading h2 {
+  color: var(--luxury-ink);
+}
+
+body.sector-sports-wellness .btn {
+  background: var(--luxury-accent);
+  border-radius: 2px;
+}
+
+body.sector-sports-wellness .btn-outline {
+  border-color: var(--luxury-gold);
+  color: var(--luxury-ink);
+}
+
+body.sector-sports-wellness .dark-section {
+  background: var(--luxury-ink);
+}
+
+body.sector-sports-wellness .pill.active,
+body.sector-sports-wellness .pill:hover {
+  border-color: var(--luxury-gold);
+}
+
+body.sector-sports-wellness .split-section,
+body.sector-sports-wellness .services-section,
+body.sector-sports-wellness .dark-section {
+  padding: 96px 0;
+}
+
+body.sector-sports-wellness .split-image-main,
+body.sector-sports-wellness .split-image-secondary,
+body.sector-sports-wellness .feature-card-image,
+body.sector-sports-wellness .service-expand-image {
+  filter: saturate(0.85) sepia(0.08);
+  border: 1px solid var(--luxury-gold);
+}
+
+body.sector-sports-wellness .hero {
+  filter: saturate(0.85) sepia(0.08);
+}
+
+body.sector-sports-wellness .sector-tile-label {
+  font-family: var(--font-display);
 }
