@@ -1468,6 +1468,14 @@ body.theme-luxury .carousel-card-image {
   .section-heading h2 {
     font-size: 1.55rem;
   }
+  .sector-grid {
+    grid-template-columns: 1fr;
+  }
+  .sector-tile,
+  .sector-tile.wide {
+    grid-column: span 1;
+    aspect-ratio: 16 / 10;
+  }
   .sector-tile-label {
     font-size: 1.05rem;
     padding: 18px;
@@ -1554,22 +1562,14 @@ body.theme-luxury .carousel-card-image {
 }
 
 @media (max-width: 480px) {
-  .sector-grid {
-    grid-template-columns: 1fr;
-  }
-  .sector-tile,
-  .sector-tile.wide {
-    grid-column: span 1;
-    aspect-ratio: 16 / 10;
-  }
   .product-grid {
     grid-template-columns: 1fr;
   }
   .pills-wrap {
     grid-template-columns: 1fr;
   }
-  .hero {
-    min-height: 88vh;
+  .hero:not(.page-hero) {
+    min-height: 70vh;
   }
 }
 
