@@ -1561,7 +1561,7 @@ const SECTORS = [
             slug: "model-management",
             name: "Model Management",
             noPage: true,
-            heroImage: "images/stock/business-handshake.jpg",
+            heroImage: "images/hospitality-events/model-management/model-portrait.jpg",
             intro: "Our model management arm represents and books models for campaigns, shows, and events, with casting handled in-house.",
             panelBody: ["Casting is run directly by our team, matched to brief, market, and shoot or show requirements."],
           },
