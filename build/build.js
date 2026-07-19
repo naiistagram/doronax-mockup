@@ -31,7 +31,10 @@ function header() {
   return `<header class="site-header">
     <div class="container">
       <a href="index.html" class="logo"><img src="images/homepage/logo.png" alt="${SITE.name}" class="logo-mark" /> ${SITE.name}</a>
-      <nav class="site-nav">
+      <button type="button" class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" data-site-nav>
         <a href="index.html">Home</a>
         <a href="index.html#sectors">Sectors</a>
         <a href="contact.html">Contact</a>
@@ -39,6 +42,24 @@ function header() {
     </div>
   </header>`;
 }
+
+const NAV_TOGGLE_SCRIPT = `<script>
+  (function () {
+    var toggle = document.querySelector('[data-nav-toggle]');
+    var nav = document.querySelector('[data-site-nav]');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      var isOpen = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>`;
 
 function footer() {
   return `<footer class="site-footer">
@@ -67,6 +88,7 @@ function page(title, body, extraScript, bodyClass) {
   ${header()}
   ${body}
   ${footer()}
+  ${NAV_TOGGLE_SCRIPT}
   ${extraScript || ""}
 </body>
 </html>

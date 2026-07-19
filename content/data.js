@@ -1555,7 +1555,6 @@ const SECTORS = [
             intro: "From keynote speakers to confident hosts and MCs, we source talent that fits the tone of your event precisely, driving energy through a product launch, guiding a formal awards dinner, or keeping a wedding reception moving. Every speaker and host is briefed on your agenda, audience, and objectives before they set foot on stage.",
             panelBody: [
               "We handle the parts that usually go wrong: timing, transitions, and tone. Includes rehearsal and briefing calls ahead of the event, and on-the-day coordination with your event manager.",
-              "<h3>Bruce Daisley</h3><p>Bruce Daisley — former Twitter EMEA VP, author, and speaker on workplace culture — is represented for speaking engagements through Doranax Talent Management. Bruce speaks on culture, leadership, and the future of work, drawing on his time leading Twitter's European business and his ongoing research and writing on workplace culture. Doranax Talent Management handles booking, logistics, and coordination for his speaking engagements.</p>",
             ],
           },
           {
