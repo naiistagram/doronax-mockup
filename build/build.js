@@ -889,7 +889,7 @@ function buildContact() {
           <h3>Registered Office</h3>
           <p>${SITE.name} Ltd<br />${SITE.address}</p>
         </div>
-        <form class="contact-form" onsubmit="return false;">
+        <form class="contact-form" id="contact-form">
           <label>Name<input type="text" name="name" required /></label>
           <label>Email<input type="email" name="email" required /></label>
           <label>Sector of Interest
@@ -899,12 +899,46 @@ function buildContact() {
           </label>
           <label>Message<textarea name="message" rows="5" required></textarea></label>
           <button type="submit" class="btn">Send Enquiry ${ARROW_SVG}</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
   </section>`;
 
-  fs.writeFileSync(path.join(ROOT, "contact.html"), page("Contact", hero + body));
+  const script = `<script>
+  (function () {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+    const status = form.querySelector("[data-form-status]");
+    const button = form.querySelector("button[type=submit]");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      button.disabled = true;
+      status.textContent = "Sending...";
+      status.className = "form-status";
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const result = await res.json();
+        if (!res.ok || !result.ok) throw new Error(result.error || "Something went wrong");
+        form.reset();
+        status.textContent = "Thanks — someone will be in touch shortly.";
+        status.className = "form-status form-status-success";
+      } catch (err) {
+        status.textContent = "Sorry, that didn't send. Please email us directly at ${SITE.email}.";
+        status.className = "form-status form-status-error";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  })();
+  </script>`;
+
+  fs.writeFileSync(path.join(ROOT, "contact.html"), page("Contact", hero + body, script));
 }
 
 function run() {
