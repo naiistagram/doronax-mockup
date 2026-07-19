@@ -880,7 +880,7 @@ const SECTORS = [
       {
         slug: "lighting",
         name: "Lighting",
-        heroImage: "images/stock/crystal-chandelier.jpg",
+        heroImage: "images/design-and-furniture/lighting/statement-chandelier.jpg",
         intro: "Lighting is treated as jewellery for the room — the detail that transforms good design into something felt rather than simply seen. Doranax curates and commissions lighting across every scale, from statement chandeliers to the quiet glow of a hand-thrown ceramic lamp base.",
         richPage: {
           subheading: "The detail that transforms good design into something felt",
@@ -890,18 +890,18 @@ const SECTORS = [
               paragraphs: [
                 "We favour warmth over brightness, layering ambient, task, and accent sources so that no room relies on a single switch to set its mood. Where a client's brief calls for it, we source genuine antique fixtures and rewire them to modern safety standards, preserving age and character without compromise.",
               ],
-              images: ["images/stock/crystal-chandelier.jpg", "images/stock/crystal-chandelier.jpg", "images/stock/crystal-chandelier.jpg"],
+              images: ["images/design-and-furniture/lighting/statement-chandelier.jpg", "images/design-and-furniture/lighting/sconces-mirror.jpg", "images/design-and-furniture/lighting/bespoke-fixtures.jpg"],
             },
             {
               type: "features",
               heading: "What We Do",
               columns: 3,
               items: [
-                { name: "Chandeliers, Sconces & Pendants", body: "Statement fittings sourced and commissioned across every scale and period.", image: "images/stock/crystal-chandelier-2.jpg" },
-                { name: "Antique & Reproduction Fixtures", body: "Genuine antique fixtures rewired and restored to modern safety standards without losing their character.", image: "images/stock/crystal-chandelier-3.jpg" },
-                { name: "Layered Lighting Plans", body: "Ambient, task, and accent lighting layered so a room never depends on one switch.", image: "images/stock/crystal-chandelier-4.jpg" },
-                { name: "Bespoke Shades & Fabrication", body: "Custom lampshades and fittings fabricated to match a scheme exactly.", image: "images/stock/crystal-chandelier-5.jpg" },
-                { name: "Dimming & Smart Integration", body: "Dimming, circuiting, and smart-lighting integration specified alongside the fixtures themselves.", image: "images/stock/crystal-chandelier-6.jpg" },
+                { name: "Chandeliers, Sconces & Pendants", body: "Statement fittings sourced and commissioned across every scale and period.", image: "images/design-and-furniture/lighting/sconces-mirror.jpg" },
+                { name: "Antique & Reproduction Fixtures", body: "Genuine antique fixtures rewired and restored to modern safety standards without losing their character.", image: "images/design-and-furniture/lighting/antique-table-lamp.jpg" },
+                { name: "Layered Lighting Plans", body: "Ambient, task, and accent lighting layered so a room never depends on one switch.", image: "images/design-and-furniture/lighting/layered-wall-sconce.jpg" },
+                { name: "Bespoke Shades & Fabrication", body: "Custom lampshades and fittings fabricated to match a scheme exactly.", image: "images/design-and-furniture/lighting/bespoke-fixtures.jpg" },
+                { name: "Dimming & Smart Integration", body: "Dimming, circuiting, and smart-lighting integration specified alongside the fixtures themselves.", image: "images/design-and-furniture/lighting/picture-light.jpg" },
               ],
             },
           ],
