@@ -777,14 +777,11 @@ function renderRichCta(cta) {
   </section>`;
 }
 
-const STAR8_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>`;
-
 function renderRichCategoryCardsBlock(block) {
   const heading = block.heading ? `<h2 class="category-cards-heading">${block.heading}</h2>` : "";
   const cards = block.cards
     .map(
       (card) => `<div class="category-card">
-          <div class="category-card-icon">${STAR8_SVG}</div>
           <h3 class="category-card-title">${card.title}</h3>
           <ul class="category-card-list">
             ${card.items.map((i) => `<li>${i}</li>`).join("\n            ")}
