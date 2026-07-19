@@ -1241,9 +1241,9 @@ const SECTORS = [
           {
             slug: "events-hostess",
             name: "Events Hostess",
-            heroImage: "images/stock/hotel-staff-uniform.jpg",
+            heroImage: "images/hospitality-events/events-hostess/hostess-hero.jpg",
             intro: "Front-of-house staff who represent your event properly, not just stand near the door. We provide professional hostesses for corporate events, product launches, and private functions, briefed on your brand, your guest list, and the tone you want at the door. Every hostess is selected and trained for the specific event, not sent over from a generic staffing pool.",
-            gallery: ["images/stock/hotel-staff-uniform-3.jpg", "images/stock/hotel-staff-uniform-4.jpg"],
+            gallery: ["images/hospitality-events/events-hostess/hostess-portrait.jpg", "images/hospitality-events/events-hostess/hostess-service.jpg"],
           },
           {
             slug: "events-photography",
