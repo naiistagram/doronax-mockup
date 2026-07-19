@@ -1269,9 +1269,9 @@ const SECTORS = [
           {
             slug: "coffee-courses",
             name: "Coffee Courses",
-            heroImage: "images/stock/fine-dining-food.jpg",
+            heroImage: "images/hospitality-events/coffee-courses/latte-art.jpg",
             intro: "Our beginner coffee courses introduce guests to brewing fundamentals, tasting, and basic latte art in a relaxed setting. A relaxed introduction to brewing and tasting, aimed at enthusiasts rather than trade professionals.",
-            gallery: ["images/stock/fine-dining-food-2.jpg", "images/stock/fine-dining-food-3.jpg"],
+            gallery: ["images/hospitality-events/coffee-courses/latte-art.jpg", "images/hospitality-events/food-beverage/coffee-barista-courses.png"],
           },
         ],
       },
