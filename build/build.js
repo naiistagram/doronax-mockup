@@ -108,7 +108,7 @@ function buildPillSection(items, basePath) {
         return `<button type="button" class="pill pill-disabled" disabled>${item.name} <span class="badge-coming-soon">Coming Soon</span></button>`;
       }
       const badge = item.comingSoon ? ` <span class="badge-coming-soon">Coming Soon</span>` : "";
-      return `<button type="button" class="pill" data-slug="${item.slug}">${item.name}${badge} ${CHEVRON_SVG}</button>`;
+      return `<button type="button" class="pill" data-slug="${item.slug}">${item.tileLabel || item.name}${badge} ${CHEVRON_SVG}</button>`;
     })
     .join("\n        ");
 
@@ -339,7 +339,10 @@ function buildSectorPage(sector) {
 
   const extra = (sector.extraBlocks || []).map((b) => RICH_BLOCK_RENDERERS[b.type](b)).join("\n");
 
-  const cta = `<section class="dark-section" style="padding: 72px 0; text-align: center;">
+  const hasJobsCta = (sector.extraBlocks || []).some((b) => b.type === "jobsCta");
+  const cta = hasJobsCta
+    ? ""
+    : `<section class="dark-section" style="padding: 72px 0; text-align: center;">
     <div class="container">
       <div class="dark-section-header" style="justify-content: center; margin-bottom: 20px;">
         <h2>Interested in working with us?</h2>
@@ -358,7 +361,9 @@ function buildSectorPage(sector) {
 function buildServicePage(sector, svc) {
   const hero = pageHero(svc.heroImage, svc.name, backLinkLeft(`${sector.slug}.html`, `Back to ${sector.name}`));
 
-  const body = `<section class="split-section" style="padding-bottom: 56px;">
+  const body = svc.hideIntroBody
+    ? ""
+    : `<section class="split-section" style="padding-bottom: 56px;">
     <div class="container">
       <div class="split-grid">
         <div class="split-text">
@@ -484,9 +489,11 @@ function renderRichProcessBlock(block) {
 }
 
 function renderRichDescriptionBlock(block) {
+  const heading = block.heading ? `<h2>${block.heading}</h2>` : "";
   const paras = block.paragraphs.map((p) => `<p>${p}</p>`).join("\n          ");
   return `<section class="split-section compact">
     <div class="container">
+      ${heading}
       <div class="rich-description">${paras}</div>
     </div>
   </section>`;
@@ -614,7 +621,7 @@ function renderRichBrokerContactBlock(block) {
             <p>${block.location}</p>
             ${block.officePhone ? `<p>Office: ${block.officePhone}</p>` : ""}
             <p>Mobile: ${block.mobilePhone}</p>
-            <p>${block.email ? `<a href="mailto:${block.email}">${block.email}</a>` : "Email — pending"}</p>
+            ${block.email ? `<p><a href="mailto:${block.email}">${block.email}</a></p>` : ""}
           </div>
         </div>
         <form class="contact-form broker-form" onsubmit="return false;">
@@ -780,8 +787,14 @@ function renderRichCta(cta) {
 function renderRichCategoryCardsBlock(block) {
   const heading = block.heading ? `<h2 class="category-cards-heading">${block.heading}</h2>` : "";
   const cards = block.cards
-    .map(
-      (card) => `<div class="category-card">
+    .map((card) =>
+      card.photo
+        ? `<div class="category-card category-card-photo">
+          <div class="category-card-image" style="background-image: url('${card.photo}')"></div>
+          <h3 class="category-card-title">${card.title}</h3>
+          <p class="category-card-body">${card.body}</p>
+        </div>`
+        : `<div class="category-card">
           <h3 class="category-card-title">${card.title}</h3>
           <ul class="category-card-list">
             ${card.items.map((i) => `<li>${i}</li>`).join("\n            ")}

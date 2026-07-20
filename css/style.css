@@ -822,9 +822,9 @@ body.theme-luxury .feature-card-image-glow {
 
 .category-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -833,6 +833,31 @@ body.theme-luxury .feature-card-image-glow {
   border: 1px solid var(--gray-light);
   border-radius: var(--radius);
   padding: 32px;
+}
+
+.category-card-photo {
+  padding: 0 0 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.category-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.category-card-photo .category-card-title {
+  margin-bottom: 8px;
+  padding: 0 24px;
+}
+
+.category-card-body {
+  color: var(--gray);
+  padding: 0 24px;
+  margin: 0;
 }
 
 .category-card-title {

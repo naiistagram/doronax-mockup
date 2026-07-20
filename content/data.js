@@ -20,8 +20,8 @@ const SITE = {
   address: "3 Mary Ann Street, Birmingham, England, B3 1BG",
   heroImage: "images/homepage/globe-hero.jpg",
   stats: [
-    { key: "sectors", value: "5", label: "sectors" },
-    { key: "services", value: "25+", label: "services" },
+    { key: "sectors", value: "5", label: "main sectors" },
+    { key: "services", value: "50+", label: "services" },
     { key: "hq", value: "UK", label: "headquartered" },
   ],
   aboutParagraphs: [
@@ -40,30 +40,6 @@ const SECTORS = [
     heroImage: "images/stock/billboard-advertising.jpg",
     intro: "Doranax Advertising delivers integrated campaigns across print, digital, and direct channels, helping brands reach the right audience with measurable impact. From concept through execution, our teams combine creative craft with performance-driven strategy.",
     extraBlocks: [
-      {
-        type: "logoGrid",
-        heading: "Sectors We Work With",
-        items: [
-          { name: "Retail", logo: img("retaillogo,brand", 300, 160) },
-          { name: "Hospitality", logo: img("hospitalitylogo,brand", 300, 160) },
-          { name: "Property", logo: img("propertylogo,brand", 300, 160) },
-          { name: "Finance", logo: img("financelogo,brand", 300, 160) },
-          { name: "Automotive", logo: img("automotivelogo,brand", 300, 160) },
-          { name: "Healthcare", logo: img("healthcarelogo,brand", 300, 160) },
-          { name: "Technology", logo: img("technologylogo,brand", 300, 160) },
-          { name: "Manufacturing", logo: img("manufacturinglogo,brand", 300, 160) },
-        ],
-      },
-      {
-        type: "supplierGrid",
-        heading: "Our Suppliers",
-        items: [
-          { name: "Print Partners", logo: img("printsupplier,logo", 300, 160) },
-          { name: "Signage Fabricators", logo: img("signagesupplier,logo", 300, 160) },
-          { name: "Media Buying", logo: img("mediasupplier,logo", 300, 160) },
-          { name: "Fleet Graphics", logo: img("fleetsupplier,logo", 300, 160) },
-        ],
-      },
       {
         type: "jobsCta",
         heading: "Work With Doranax Advertising",
@@ -179,6 +155,11 @@ const SECTORS = [
                   title: "Brand Design Services",
                   items: ["Primary Logo", "Secondary Logo", "Colour Palette", "Typography", "Brand Guidelines"],
                 },
+                {
+                  photo: "images/advertising/graphic-design/darby.jpg",
+                  title: "Darby",
+                  body: "Please contact Darby for both Graphic Design Services and Brand Design Services.",
+                },
               ],
               contactHref: "#graphic-design-contact",
               contactLabel: "Contact Us",
@@ -254,8 +235,14 @@ const SECTORS = [
             {
               type: "features",
               heading: "Design Strategy",
-              columns: 4,
+              columns: 5,
               items: [
+                {
+                  name: "Web Design",
+                  subheading: "A site that does its job",
+                  body: "Websites designed and built to convert, not just look good — clear structure, fast load times, and a brand-consistent look across every page, from a simple brochure site through to something more complex.",
+                  image: img("webdesign,laptop", 900, 650),
+                },
                 {
                   name: "Design Strategy",
                   body: "We build the thinking before the visuals — brand positioning, market fit, and creative direction that gives every design decision a reason behind it. Nothing gets designed until we know why it needs to exist.",
@@ -622,7 +609,7 @@ const SECTORS = [
           blocks: [
             {
               type: "features",
-              heading: "Services",
+              heading: "General Recruitment",
               columns: 3,
               items: [
                 { name: "Executive Search", body: "Senior and leadership-level search run with discretion and a rigorous shortlist process.", image: "images/stock/job-interview-office-2.jpg" },
@@ -658,6 +645,17 @@ const SECTORS = [
             panelBody: [
               "Services: Software Development & Engineering Recruitment, Data, Cloud & Infrastructure Hiring, Cybersecurity Recruitment, IT Leadership & CTO Search, Contract/Interim Tech Staffing, and Tech Team Scaling for Startups & Scale-ups.",
               "Why Doranax: our consultants speak tech fluently — we know the difference between a good developer and the right developer for your stack and your culture.",
+            ],
+          },
+          {
+            slug: "food-and-beverage-recruitment",
+            name: "Recruitment for Food & Beverage",
+            noPage: true,
+            heroImage: "images/stock/job-interview-office.jpg",
+            intro: "Kitchen to front-of-house, staffed right. Doranax's Food & Beverage Recruitment specialists connect hospitality and F&B businesses with chefs, management, and front-of-house talent who fit the pace and standards of the venue.",
+            panelBody: [
+              "Services: Head Chef & Kitchen Leadership Search, Front-of-House & Management Recruitment, Seasonal & Volume Hospitality Staffing, Barista & Café Team Recruitment, and Contract/Interim F&B Staffing.",
+              "Why Doranax: we know the difference between someone who can cook and someone who can run a kitchen under pressure — every shortlist is matched to the pace and standard of your venue.",
             ],
           },
         ],
@@ -697,17 +695,10 @@ const SECTORS = [
               ],
             },
             {
-              type: "features",
+              type: "description",
               heading: "Country Coverage — Regional Representatives",
-              columns: 4,
-              items: [
-                { name: "Poland", subheading: "Anna", body: "Our Poland-based representative for regional sourcing, compliance, and logistics coordination.", image: "images/stock/city-warsaw.jpg" },
-                { name: "Lithuania", subheading: "Adriana", body: "Our Lithuania-based representative supporting Baltic trade routes and customs coordination.", image: "images/stock/city-vilnius.jpg" },
-                { name: "Estonia", subheading: "Anastacia", body: "Our Estonia-based representative for Baltic and Nordic-adjacent trade support.", image: "images/stock/city-tallinn.jpg" },
-                { name: "Peru", subheading: "Ariana", body: "Our Peru-based representative supporting South American sourcing and export logistics.", image: "images/stock/city-lima.jpg" },
-                { name: "South Korea", subheading: "Lee", body: "Our South Korea-based representative for East Asian trade relationships and manufacturing sourcing.", image: "images/stock/city-seoul.jpg" },
-                { name: "Portugal", subheading: "Sedat", body: "Our Portugal-based representative supporting Iberian and Southern European trade routes.", image: "images/stock/city-lisbon.jpg" },
-                { name: "Morocco", subheading: "Becky", body: "Our Morocco-based representative for North African sourcing and cross-Mediterranean logistics.", image: "images/stock/city-casablanca.jpg" },
+              paragraphs: [
+                "We have representatives at the following countries: Poland, Lithuania, Estonia, Peru, South Korea, Portugal, Morocco, and Turkiye.",
               ],
             },
           ],
@@ -934,7 +925,7 @@ const SECTORS = [
                   body: "He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses such as Bonhams and Christie's.",
                   image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
                   clientPhotos: [
-                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpeg",
+                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
                     "images/design-and-furniture/interior-design/clients/elton-john.jpg",
                     "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
                   ],
@@ -1032,7 +1023,7 @@ const SECTORS = [
               columns: 2,
               items: [
                 { name: "Yacht Interiors", body: "Cabin and saloon interiors designed around weight, space, and marine-grade material constraints.", image: "images/stock/yacht-interior-2.jpg" },
-                { name: "Private Jet Interiors", body: "Cabin schemes built for a space where every inch and every gram is accounted for.", image: "images/stock/yacht-interior-3.jpg" },
+                { name: "Private Jet Interiors", body: "Cabin schemes built for a space where every inch and every gram is accounted for.", image: "images/design-and-furniture/private-jet/private-jet-interior.jpg" },
               ],
             },
           ],
@@ -1056,14 +1047,14 @@ const SECTORS = [
       },
       {
         slug: "bronze-coffee-tables-wooden-boxes",
-        name: "Bronze, Coffee Tables & Wooden Boxes",
+        name: "Bronze Sculptures, Coffee Tables & Wooden Boxes",
         heroImage: "images/design-and-furniture/bronze/bronze-dolphins.jpg",
         intro: "This collection sits apart from architectural fittings — it's where Doranax's collector's eye takes over. In the spirit of a Pimlico Road antiques shop as much as a design studio, this is the corner of the business devoted to the object: the piece that makes a room, the thing a guest picks up and asks about.",
         gallery: ["images/design-and-furniture/bronze/bronze-figure.jpg", "images/design-and-furniture/bronze/bronze-figure.jpg"],
         subServices: [
           {
             slug: "bronze",
-            name: "Bronze",
+            name: "Bronze Sculptures",
             noPage: true,
             heroImage: "images/design-and-furniture/bronze/bronze-dolphins.jpg",
             intro: "Cast bronze pieces — sculptural forms, console bases, decorative hardware, and one-off commissioned objects — bringing weight, patina, and permanence to a scheme.",
@@ -1085,7 +1076,7 @@ const SECTORS = [
             slug: "custom-wooden-boxes",
             name: "Custom Wood Boxes",
             noPage: true,
-            heroImage: "images/stock/furniture-showroom.jpg",
+            heroImage: "images/design-and-furniture/wooden-boxes/wooden-box.jpg",
             intro: "Hand-built and hand-finished boxes in solid timber — from small keepsake and jewellery boxes to larger trunks and blanket boxes — often inlaid, ebonised, or fitted with brass or bronze hardware.",
             panelBody: [
               "Each piece is commissioned to size and finish for a specific room, shelf, or client. Each item in this collection is either sourced as a genuine antique, commissioned from British craftsmen, or cast and finished in-house — available to view via the Doranax showroom and by appointment.",
@@ -1105,6 +1096,7 @@ const SECTORS = [
       {
         slug: "property",
         name: "Property",
+        hideIntroBody: true,
         heroImage: "images/hospitality-events/property/hero.png",
         intro: "Space, service, and everything in between, handled from one place. From the first booking to the last clean, our team manages the details across every property in your portfolio, so nothing falls through the cracks and nothing needs your constant attention.",
         gallery: ["images/hospitality-events/property/venue-hire.png", "images/hospitality-events/property/office-sharing.png"],
@@ -1130,21 +1122,20 @@ const SECTORS = [
             name: "Dark Kitchen Hire",
             noPage: true,
             heroImage: "images/hospitality-events/property/dark-kitchen-hire.png",
-            comingSoon: { headline: "Coming Soon", body: "Full details to follow." },
             intro: "Kitchens built to work. Commercial kitchen space for delivery-only food brands, fitted and ready to operate without the overhead of a full restaurant site.",
-            panelBody: ["Space is available on flexible terms, sized for single operators through to multi-brand kitchens. Full details coming soon."],
+            panelBody: ["Space is available on flexible terms, sized for single operators through to multi-brand kitchens."],
           },
           {
             slug: "bnb-management",
             name: "BnB Management",
             noPage: true,
             heroImage: "images/hospitality-events/property/bnb-management.png",
-            intro: "Your listing, fully run. Professional Airbnb management typically runs 15-25% commission. We handle everything that fee is supposed to cover: pricing strategy, listing optimisation, guest vetting and 24/7 messaging, cleaning coordination, and maintenance, all in one place.",
+            intro: "Your listing, fully run. We handle everything pricing strategy, listing optimisation, guest vetting and 24/7 messaging, cleaning coordination, and maintenance, all in one place.",
             panelBody: ["You keep the income, we keep the headaches."],
           },
           {
             slug: "property-service",
-            name: "Property Service",
+            name: "Property Services",
             noPage: true,
             heroImage: "images/hospitality-events/property/property-service.png",
             intro: "Upkeep, handled. General property services for owners and managers, maintenance, inspections, and day-to-day upkeep, coordinated through a single point of contact.",
@@ -1171,6 +1162,7 @@ const SECTORS = [
       {
         slug: "events",
         name: "Events",
+        hideIntroBody: true,
         heroImage: "images/hospitality-events/events-production/events-management.png",
         intro: "Everything that makes an event or a night out actually work — hire, talent, production, and access — brought together under one roof.",
         gallery: ["images/stock/luxury-event-venue-2.jpg", "images/stock/luxury-event-venue-3.jpg"],
@@ -1228,15 +1220,8 @@ const SECTORS = [
             name: "Private Members Club",
             noPage: true,
             href: "hospitality-events-private-members-club.html",
-            heroImage: "images/stock/vintage-library.jpg",
+            heroImage: "images/stock/vintage-library-2.jpg",
             intro: "A discreet space and calendar of events for members, with reciprocal access across partner venues.",
-          },
-          {
-            slug: "events-organisation",
-            name: "Events Organisation",
-            heroImage: "images/stock/luxury-event-venue.jpg",
-            intro: "The planning side of the event, handled from first concept through to a finished brief your team can act on. Before anything gets executed, it has to be organised properly — concept, guest experience, budget, timeline, and every supplier that needs booking against it. We build that plan from scratch or take over one that's already half-formed, and hand over something a venue, a caterer, or our own events team can run against without guesswork.",
-            gallery: ["images/stock/luxury-event-venue-2.jpg", "images/stock/luxury-event-venue-3.jpg"],
           },
           {
             slug: "events-hostess",
@@ -1298,17 +1283,15 @@ const SECTORS = [
             name: "Spirits (Gin, Rum and Vodka)",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/spirits.png",
-            comingSoon: { headline: "Coming Soon", body: "Product details and launch timing will follow." },
-            intro: "A small-batch spirits line covering gin, rum, and vodka, currently in development with a distillery partner.",
-            panelBody: ["Product details and launch timing will follow once the partnership and recipes are confirmed."],
+            comingSoon: { headline: "Coming Soon", body: "Full launch details to follow." },
+            intro: "Our line will cover gin, rum, and vodka.",
           },
           {
             slug: "food-advisor",
-            name: "Food Advisor",
+            name: "Food Advisory",
             noPage: true,
             heroImage: "images/hospitality-events/food-beverage/food-advisor.png",
             intro: "Our food advisory service helps venues and operators refine menus, sourcing, and kitchen operations, drawing on hands-on F&B experience across the group.",
-            panelBody: ["Engagements range from a single menu review through to a full operational audit of a kitchen or venue."],
           },
           {
             slug: "recruitment",
@@ -1317,6 +1300,13 @@ const SECTORS = [
             heroImage: "images/hospitality-events/food-beverage/recruitment.png",
             intro: "We source and place chefs, front-of-house staff, and management for restaurants, bars, and hotels, matching candidates to the standard each venue demands.",
             panelBody: ["Coverage spans permanent and temporary hires, from kitchen porters through to head chef and general manager roles."],
+          },
+          {
+            slug: "kitchen-chef-wear",
+            name: "Kitchen & Chef Wear",
+            noPage: true,
+            heroImage: "images/stock/hotel-staff-uniform-2.jpg",
+            intro: "Durable, heat- and stain-resistant kitchen wear built for a full service, not a photoshoot.",
           },
           {
             slug: "hamburger-pizza-app",
@@ -1339,7 +1329,7 @@ const SECTORS = [
             slug: "coffee-beans",
             name: "Coffee Beans",
             noPage: true,
-            heroImage: "images/hospitality-events/food-beverage/coffee-beans.png",
+            heroImage: "images/hospitality-events/food-beverage/coffee-beans.jpg",
             intro: "Sourced for how it's actually served. We select coffee the way it should be selected, around how it's going to be used, not just how it tastes on its own. Roast profile, grind consistency, and origin are all matched to the brewing method and the pace of service.",
             panelBody: ["Every bean is chosen with the venue in mind first, the flavour profile second, so what ends up in the cup is right for the place serving it."],
           },
@@ -1371,6 +1361,15 @@ const SECTORS = [
             heroImage: "images/hospitality-events/food-beverage/breakfast-club.png",
             comingSoon: { headline: "Coming Soon", body: "Menu and venue details will be confirmed closer to launch." },
             intro: "A breakfast and brunch concept currently in development for our F&B portfolio.",
+            panelBody: ["Menu and venue details will be confirmed closer to launch."],
+          },
+          {
+            slug: "supper-club",
+            name: "Supper Club",
+            noPage: true,
+            heroImage: "images/hospitality-events/food-beverage/supper-club.jpg",
+            comingSoon: { headline: "Coming Soon", body: "Menu and venue details will be confirmed closer to launch." },
+            intro: "A supper club concept currently in development for our F&B portfolio.",
             panelBody: ["Menu and venue details will be confirmed closer to launch."],
           },
           {
@@ -1683,7 +1682,7 @@ const SECTORS = [
         slug: "private-members-club",
         name: "Private Members Club",
         luxuryTheme: true,
-        heroImage: "images/stock/vintage-library.jpg",
+        heroImage: "images/stock/vintage-library-2.jpg",
         intro: "A discreet space and calendar of events for members, with reciprocal access across partner venues.",
         richPage: {
           subheading: "A discreet space for members, with reciprocal access across partner venues",
@@ -1867,7 +1866,8 @@ const SECTORS = [
       },
       {
         slug: "protein",
-        name: "Protein",
+        name: "Protein Powder",
+        tileLabel: "Supplements",
         heroImage: "images/sports-wellness/protein/product-1.png",
         intro: "Recovery is where the real gains happen, and Doranax Athletics Whey Protein was formulated to support exactly that. Packed with a high-quality protein blend per serving, it's designed to help repair and rebuild muscle after even the toughest sessions, without unnecessary fillers, artificial junk, or a chalky aftertaste.",
         richPage: {
