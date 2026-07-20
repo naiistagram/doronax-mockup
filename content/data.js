@@ -235,7 +235,7 @@ const SECTORS = [
             {
               type: "features",
               heading: "Design Strategy",
-              columns: 5,
+              columns: 3,
               items: [
                 {
                   name: "Web Design",
@@ -851,11 +851,11 @@ const SECTORS = [
               heading: "What We Do",
               columns: 3,
               items: [
-                { name: "Fireplace Surrounds & Chimneypieces", body: "Bespoke, hand-carved stone chimneypieces and surrounds built to the scale of the room.", image: "images/stock/marble-quarry-2.jpg" },
+                { name: "Fireplace Surrounds & Chimneypieces", body: "Bespoke, hand-carved stone chimneypieces and surrounds built to the scale of the room.", image: "images/design-and-furniture/natural-stone/fireplace-surrounds-chimneypieces.jpg" },
                 { name: "Worktops, Islands & Splashbacks", body: "Kitchen stone specified for grain and finish, not just slab availability.", image: "images/design-and-furniture/natural-stone/worktops-islands-splashbacks.jpg" },
-                { name: "Flooring, Hearths & Staircases", body: "Stone flooring and staircases selected to age well underfoot, not just look good on day one.", image: "images/stock/marble-quarry-3.jpg" },
+                { name: "Flooring, Hearths & Staircases", body: "Stone flooring and staircases selected to age well underfoot, not just look good on day one.", image: "images/design-and-furniture/natural-stone/flooring-hearths-staircases.jpg" },
                 { name: "Reclaimed & Antique Stone Sourcing", body: "Genuine reclaimed and antique stone, sourced with the wear and character already built in.", image: "images/stock/marble-quarry-4.jpg" },
-                { name: "Specification, Templating & Installation", body: "Full specification and templating through to installation management, handled end to end.", image: "images/stock/marble-quarry-5.jpg" },
+                { name: "Specification, Templating & Installation", body: "Full specification and templating through to installation management, handled end to end.", image: "images/design-and-furniture/natural-stone/specification-templating-installation.jpg" },
               ],
             },
           ],
