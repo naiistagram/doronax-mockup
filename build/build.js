@@ -449,8 +449,13 @@ function renderRichFeaturesBlock(block) {
           <p>${item.body}</p>
           ${
             item.clientPhotos
-              ? `<div class="feature-card-client-photos">
+              ? Array.isArray(item.clientPhotos)
+                ? `<div class="feature-card-client-photos">
             ${item.clientPhotos.map((src) => `<div class="feature-card-client-photo" style="background-image: url('${src}')"></div>`).join("\n            ")}
+          </div>`
+                : `<div class="feature-card-client-featured" style="background-image: url('${item.clientPhotos.featured}')"></div>
+          <div class="feature-card-client-photos">
+            ${item.clientPhotos.row.map((src) => `<div class="feature-card-client-photo" style="background-image: url('${src}')"></div>`).join("\n            ")}
           </div>`
               : ""
           }

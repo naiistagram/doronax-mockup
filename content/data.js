@@ -241,7 +241,7 @@ const SECTORS = [
                   name: "Web Design",
                   subheading: "A site that does its job",
                   body: "Websites designed and built to convert, not just look good — clear structure, fast load times, and a brand-consistent look across every page, from a simple brochure site through to something more complex.",
-                  image: img("webdesign,laptop", 900, 650),
+                  image: "images/advertising/digital-marketing/web-design.jpg",
                 },
                 {
                   name: "Design Strategy",
@@ -924,11 +924,13 @@ const SECTORS = [
                   subheading: "Interior Designer & Antiques Dealer",
                   body: "He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses such as Bonhams and Christie's.",
                   image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
-                  clientPhotos: [
-                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
-                    "images/design-and-furniture/interior-design/clients/elton-john.jpg",
-                    "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
-                  ],
+                  clientPhotos: {
+                    featured: "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
+                    row: [
+                      "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
+                      "images/design-and-furniture/interior-design/clients/elton-john.jpg",
+                    ],
+                  },
                 },
                 {
                   name: "Anna Sobolewska",
@@ -1048,7 +1050,8 @@ const SECTORS = [
       {
         slug: "bronze-coffee-tables-wooden-boxes",
         name: "Bronze Sculptures, Coffee Tables & Wooden Boxes",
-        heroImage: "images/design-and-furniture/bronze/bronze-dolphins.jpg",
+        hideIntroBody: true,
+        heroImage: "images/design-and-furniture/bronze/bronze-figure.jpg",
         intro: "This collection sits apart from architectural fittings — it's where Doranax's collector's eye takes over. In the spirit of a Pimlico Road antiques shop as much as a design studio, this is the corner of the business devoted to the object: the piece that makes a room, the thing a guest picks up and asks about.",
         gallery: ["images/design-and-furniture/bronze/bronze-figure.jpg", "images/design-and-furniture/bronze/bronze-figure.jpg"],
         subServices: [
@@ -1056,7 +1059,7 @@ const SECTORS = [
             slug: "bronze",
             name: "Bronze Sculptures",
             noPage: true,
-            heroImage: "images/design-and-furniture/bronze/bronze-dolphins.jpg",
+            heroImage: "images/design-and-furniture/bronze/bronze-figure.jpg",
             intro: "Cast bronze pieces — sculptural forms, console bases, decorative hardware, and one-off commissioned objects — bringing weight, patina, and permanence to a scheme.",
             panelBody: [
               "Bronze is worked both as functional furniture (table bases, fittings) and as pure decorative sculpture, aged and finished to sit comfortably beside genuine antiques.",
@@ -1263,7 +1266,7 @@ const SECTORS = [
       {
         slug: "food-beverage",
         name: "Food & Beverage",
-        heroImage: "images/hospitality-events/food-beverage/cake.png",
+        heroImage: "images/hospitality-events/food-beverage/cake.jpg",
         intro: "We've curated a dynamic food and beverage portfolio, ranging from restaurants, bars, cafes, beach clubs, lounges, and in-room dining.",
         richPage: {
           subheading: "Capitalising on opportunities across the food and beverage landscape",
@@ -1273,7 +1276,7 @@ const SECTORS = [
               paragraphs: [
                 "The food and beverage landscape demands more than just speed; it requires established connections and a deep understanding of the market to navigate properly. Our team brings years of specialised experience and an international perspective to every project, delivering the precise solutions needed to facilitate expansion, manage refinancing, or handle the complexities of a business sale with efficiency.",
               ],
-              images: ["images/hospitality-events/food-beverage/cake.png", "images/hospitality-events/food-beverage/burger.png", "images/hospitality-events/food-beverage/coffee-beans.png"],
+              images: ["images/hospitality-events/food-beverage/cake.jpg", "images/hospitality-events/food-beverage/burger.png", "images/hospitality-events/food-beverage/coffee-beans.jpg"],
             },
           ],
         },
@@ -1309,6 +1312,14 @@ const SECTORS = [
             intro: "Durable, heat- and stain-resistant kitchen wear built for a full service, not a photoshoot.",
           },
           {
+            slug: "gourmet-travels",
+            name: "Gourmet Travels",
+            noPage: true,
+            heroImage: "images/stock/fine-dining-food.jpg",
+            intro: "Trips built around the table — chef-led, destination-driven, and planned around what's actually worth eating there. We plan travel around food the way other people plan it around landmarks: vineyard regions, chef's table experiences, markets and producers most visitors never find.",
+            panelBody: ["Includes chef-led experiences and private tastings, itineraries built around regional food and wine, and access to producers, vineyards, and kitchens not open to the public."],
+          },
+          {
             slug: "hamburger-pizza-app",
             name: "Hamburger and Pizza App",
             noPage: true,
@@ -1337,10 +1348,11 @@ const SECTORS = [
             slug: "cake",
             name: "Cake",
             noPage: true,
-            heroImage: "images/hospitality-events/food-beverage/cake.png",
+            heroImage: "images/hospitality-events/food-beverage/cake.jpg",
             intro: "Made to order, made for the moment. Every cake starts with a conversation — flavour, finish, and the occasion it's marking, whether that's a birthday, a wedding, a christening, or a corporate milestone worth celebrating properly.",
             panelBody: [
               "We bake and decorate each one from scratch, working from a flavour range that spans the classics through to something a little more adventurous. Orders need a minimum of three days' notice, and every cake can be collected or delivered city-wide.",
+              "Contact Anastassia for cake orders.",
             ],
           },
           {
