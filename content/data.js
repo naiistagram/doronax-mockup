@@ -1266,7 +1266,7 @@ const SECTORS = [
       {
         slug: "food-beverage",
         name: "Food & Beverage",
-        heroImage: "images/hospitality-events/food-beverage/cake.jpg",
+        heroImage: "images/hospitality-events/food-beverage/cake.png",
         intro: "We've curated a dynamic food and beverage portfolio, ranging from restaurants, bars, cafes, beach clubs, lounges, and in-room dining.",
         richPage: {
           subheading: "Capitalising on opportunities across the food and beverage landscape",
@@ -1276,7 +1276,7 @@ const SECTORS = [
               paragraphs: [
                 "The food and beverage landscape demands more than just speed; it requires established connections and a deep understanding of the market to navigate properly. Our team brings years of specialised experience and an international perspective to every project, delivering the precise solutions needed to facilitate expansion, manage refinancing, or handle the complexities of a business sale with efficiency.",
               ],
-              images: ["images/hospitality-events/food-beverage/cake.jpg", "images/hospitality-events/food-beverage/burger.png", "images/hospitality-events/food-beverage/coffee-beans.jpg"],
+              images: ["images/hospitality-events/food-beverage/cake.png", "images/hospitality-events/food-beverage/burger.png", "images/hospitality-events/food-beverage/coffee-beans.jpg"],
             },
           ],
         },
