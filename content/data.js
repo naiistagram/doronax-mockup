@@ -1049,6 +1049,7 @@ const SECTORS = [
         slug: "bronze-coffee-tables-wooden-boxes",
         name: "Bronze Sculptures, Coffee Tables & Wooden Boxes",
         hideIntroBody: true,
+        stackedSubServices: true,
         heroImage: "images/design-and-furniture/bronze/bronze-figure.jpg",
         intro: "This collection sits apart from architectural fittings — it's where Doranax's collector's eye takes over. In the spirit of a Pimlico Road antiques shop as much as a design studio, this is the corner of the business devoted to the object: the piece that makes a room, the thing a guest picks up and asks about.",
         gallery: ["images/design-and-furniture/bronze/bronze-figure.jpg", "images/design-and-furniture/bronze/bronze-figure.jpg"],

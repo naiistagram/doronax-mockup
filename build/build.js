@@ -259,9 +259,9 @@ function splitSection(heading, paragraphs, mainImage, secondaryImage, link, reve
           ${paras}
           ${link ? `<a href="${link.href}" class="arrow-link">${link.label}${ARROW_SVG}</a>` : ""}
         </div>
-        <div class="split-images">
+        <div class="split-images${secondaryImage ? "" : " single"}">
           <div class="split-image-main" style="background-image: url('${mainImage}')"></div>
-          <div class="split-image-secondary" style="background-image: url('${secondaryImage}')"></div>
+          ${secondaryImage ? `<div class="split-image-secondary" style="background-image: url('${secondaryImage}')"></div>` : ""}
         </div>
       </div>
     </div>
@@ -413,9 +413,16 @@ function buildServicePage(sector, svc) {
   let featured = "";
   let script = "";
   if (svc.subServices && svc.subServices.length) {
-    const { chips, panels } = buildPillSection(svc.subServices, `${sector.slug}-${svc.slug}`);
-    featured = buildFeaturedShowcase(svc.subServices, `${sector.slug}-${svc.slug}`);
-    subServices = `<section class="services-section front-and-center">
+    if (svc.stackedSubServices) {
+      subServices = svc.subServices
+        .map((sub, i) =>
+          splitSection(sub.name, [sub.intro, ...(sub.panelBody || [])], sub.heroImage, null, null, i % 2 === 1)
+        )
+        .join("\n");
+    } else {
+      const { chips, panels } = buildPillSection(svc.subServices, `${sector.slug}-${svc.slug}`);
+      featured = buildFeaturedShowcase(svc.subServices, `${sector.slug}-${svc.slug}`);
+      subServices = `<section class="services-section front-and-center">
     <div class="container">
       <h2>${svc.name} Services</h2>
       <div class="pills-wrap" data-pills>
@@ -424,7 +431,8 @@ function buildServicePage(sector, svc) {
       ${panels}
     </div>
   </section>`;
-    script = PILLS_SCRIPT;
+      script = PILLS_SCRIPT;
+    }
   }
 
   const enquiry = `<section class="split-section service-enquiry">

@@ -360,6 +360,14 @@ body.nav-open .nav-toggle span:nth-child(3) {
   border-radius: var(--radius);
 }
 
+.split-images.single {
+  min-height: 0;
+}
+
+.split-images.single .split-image-main {
+  width: 100%;
+}
+
 .split-image-secondary {
   position: absolute;
   right: 0;

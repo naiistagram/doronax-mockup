@@ -32,51 +32,50 @@
       <h1>Bronze Sculptures, Coffee Tables & Wooden Boxes</h1>
       
     </div>
-  </section><section class="services-section front-and-center">
+  </section><section class="split-section">
     <div class="container">
-      <h2>Bronze Sculptures, Coffee Tables & Wooden Boxes Services</h2>
-      <div class="pills-wrap" data-pills>
-        <button type="button" class="pill" data-slug="bronze">Bronze Sculptures <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <button type="button" class="pill" data-slug="coffee-tables">Coffee Tables <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <button type="button" class="pill" data-slug="custom-wooden-boxes">Custom Wood Boxes <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-      </div>
-      <div class="service-expand" data-panel="bronze">
-        <div class="service-expand-grid">
-          <div class="service-expand-image" style="background-image: url('images/design-and-furniture/bronze/bronze-figure.jpg')"></div>
-          <div class="service-expand-body">
-            <h3>Bronze Sculptures</h3>
-            <p>Cast bronze pieces — sculptural forms, console bases, decorative hardware, and one-off commissioned objects — bringing weight, patina, and permanence to a scheme.</p>
-            
-            <p>Bronze is worked both as functional furniture (table bases, fittings) and as pure decorative sculpture, aged and finished to sit comfortably beside genuine antiques.</p>
-            
-            
-          </div>
+      <div class="split-grid">
+        <div class="split-text">
+          <h2>Bronze Sculptures</h2>
+          <p>Cast bronze pieces — sculptural forms, console bases, decorative hardware, and one-off commissioned objects — bringing weight, patina, and permanence to a scheme.</p>
+          <p>Bronze is worked both as functional furniture (table bases, fittings) and as pure decorative sculpture, aged and finished to sit comfortably beside genuine antiques.</p>
+          
+        </div>
+        <div class="split-images single">
+          <div class="split-image-main" style="background-image: url('images/design-and-furniture/bronze/bronze-figure.jpg')"></div>
+          
         </div>
       </div>
-      <div class="service-expand" data-panel="coffee-tables">
-        <div class="service-expand-grid">
-          <div class="service-expand-image" style="background-image: url('images/design-and-furniture/coffee-tables/coffee-table-1.jpg')"></div>
-          <div class="service-expand-body">
-            <h3>Coffee Tables</h3>
-            <p>A mix of antique, vintage, and bespoke coffee tables spanning periods and materials: solid ebony and Anglo-Indian pieces, draped-and-skirted forms in unexpected materials such as wicker, and custom-made contemporary designs.</p>
-            
-            <p>Pieces are built to Doranax specification in timber, stone, and metal, or sourced as genuine antique and vintage finds.</p>
-            
-            
-          </div>
+    </div>
+  </section>
+<section class="split-section">
+    <div class="container">
+      <div class="split-grid reverse">
+        <div class="split-text">
+          <h2>Coffee Tables</h2>
+          <p>A mix of antique, vintage, and bespoke coffee tables spanning periods and materials: solid ebony and Anglo-Indian pieces, draped-and-skirted forms in unexpected materials such as wicker, and custom-made contemporary designs.</p>
+          <p>Pieces are built to Doranax specification in timber, stone, and metal, or sourced as genuine antique and vintage finds.</p>
+          
+        </div>
+        <div class="split-images single">
+          <div class="split-image-main" style="background-image: url('images/design-and-furniture/coffee-tables/coffee-table-1.jpg')"></div>
+          
         </div>
       </div>
-      <div class="service-expand" data-panel="custom-wooden-boxes">
-        <div class="service-expand-grid">
-          <div class="service-expand-image" style="background-image: url('images/design-and-furniture/wooden-boxes/wooden-box.jpg')"></div>
-          <div class="service-expand-body">
-            <h3>Custom Wood Boxes</h3>
-            <p>Hand-built and hand-finished boxes in solid timber — from small keepsake and jewellery boxes to larger trunks and blanket boxes — often inlaid, ebonised, or fitted with brass or bronze hardware.</p>
-            
-            <p>Each piece is commissioned to size and finish for a specific room, shelf, or client. Each item in this collection is either sourced as a genuine antique, commissioned from British craftsmen, or cast and finished in-house — available to view via the Doranax showroom and by appointment.</p>
-            
-            
-          </div>
+    </div>
+  </section>
+<section class="split-section">
+    <div class="container">
+      <div class="split-grid">
+        <div class="split-text">
+          <h2>Custom Wood Boxes</h2>
+          <p>Hand-built and hand-finished boxes in solid timber — from small keepsake and jewellery boxes to larger trunks and blanket boxes — often inlaid, ebonised, or fitted with brass or bronze hardware.</p>
+          <p>Each piece is commissioned to size and finish for a specific room, shelf, or client. Each item in this collection is either sourced as a genuine antique, commissioned from British craftsmen, or cast and finished in-house — available to view via the Doranax showroom and by appointment.</p>
+          
+        </div>
+        <div class="split-images single">
+          <div class="split-image-main" style="background-image: url('images/design-and-furniture/wooden-boxes/wooden-box.jpg')"></div>
+          
         </div>
       </div>
     </div>
@@ -140,25 +139,6 @@
     if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
   })();
   </script>
-  <script>
-  function openPill(btn) {
-    const slug = btn.dataset.slug;
-    const panel = document.querySelector('.service-expand[data-panel="' + slug + '"]');
-    document.querySelectorAll('[data-pills] .pill').forEach((p) => p.classList.remove('active'));
-    document.querySelectorAll('.service-expand').forEach((p) => p.classList.remove('visible'));
-    btn.classList.add('active');
-    panel.classList.add('visible');
-  }
-  document.querySelectorAll('[data-pills] .pill[data-slug]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const isOpen = btn.classList.contains('active');
-      document.querySelectorAll('[data-pills] .pill').forEach((p) => p.classList.remove('active'));
-      document.querySelectorAll('.service-expand').forEach((p) => p.classList.remove('visible'));
-      if (!isOpen) openPill(btn);
-    });
-  });
-  const firstPill = document.querySelector('[data-pills] .pill[data-slug]');
-  if (firstPill) openPill(firstPill);
-  </script>
+  
 </body>
 </html>
