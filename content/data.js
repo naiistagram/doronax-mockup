@@ -1278,6 +1278,13 @@ const SECTORS = [
               images: ["images/hospitality-events/food-beverage/cake.png", "images/hospitality-events/food-beverage/burger.png", "images/hospitality-events/food-beverage/coffee-beans.jpg"],
             },
           ],
+          cta: {
+            heading: "Looking to Get Involved in Food & Beverage?",
+            body: "Get in touch and our team will talk through opportunities across our food and beverage portfolio.",
+            buttonLabel: "Contact Us",
+            buttonHref: "contact.html",
+            form: false,
+          },
         },
         subServices: [
           {
