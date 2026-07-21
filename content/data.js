@@ -924,13 +924,11 @@ const SECTORS = [
                   subheading: "Interior Designer & Antiques Dealer",
                   body: "He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses such as Bonhams and Christie's.",
                   image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
-                  clientPhotos: {
-                    featured: "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
-                    row: [
-                      "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
-                      "images/design-and-furniture/interior-design/clients/elton-john.jpg",
-                    ],
-                  },
+                  clientPhotos: [
+                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
+                    "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
+                    "images/design-and-furniture/interior-design/clients/elton-john.jpg",
+                  ],
                 },
                 {
                   name: "Anna Sobolewska",

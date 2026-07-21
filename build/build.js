@@ -70,6 +70,35 @@ function footer() {
   </footer>`;
 }
 
+function cookieBanner() {
+  return `<div class="cookie-banner" data-cookie-banner hidden>
+    <div class="cookie-banner-inner">
+      <p>We use cookies to make this site work properly and to understand how it's used. By continuing, you agree to our use of cookies.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-outline" data-cookie-decline>Decline</button>
+        <button type="button" class="btn" data-cookie-accept>Accept</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+const COOKIE_BANNER_SCRIPT = `<script>
+  (function () {
+    var KEY = 'doranax-cookie-consent';
+    var banner = document.querySelector('[data-cookie-banner]');
+    if (!banner) return;
+    if (!localStorage.getItem(KEY)) banner.hidden = false;
+    function dismiss(value) {
+      localStorage.setItem(KEY, value);
+      banner.hidden = true;
+    }
+    var acceptBtn = banner.querySelector('[data-cookie-accept]');
+    var declineBtn = banner.querySelector('[data-cookie-decline]');
+    if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss('accepted'); });
+    if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
+  })();
+  </script>`;
+
 // Sector-scoped body class, plus the shared "old money" luxury theme for the
 // individual item opted in via `luxuryTheme: true` (e.g. Private Members Club).
 function pageBodyClass(sectorSlug, item) {
@@ -88,7 +117,9 @@ function page(title, body, extraScript, bodyClass) {
   ${header()}
   ${body}
   ${footer()}
+  ${cookieBanner()}
   ${NAV_TOGGLE_SCRIPT}
+  ${COOKIE_BANNER_SCRIPT}
   ${extraScript || ""}
 </body>
 </html>
@@ -449,13 +480,8 @@ function renderRichFeaturesBlock(block) {
           <p>${item.body}</p>
           ${
             item.clientPhotos
-              ? Array.isArray(item.clientPhotos)
-                ? `<div class="feature-card-client-photos">
+              ? `<div class="feature-card-client-photos">
             ${item.clientPhotos.map((src) => `<div class="feature-card-client-photo" style="background-image: url('${src}')"></div>`).join("\n            ")}
-          </div>`
-                : `<div class="feature-card-client-featured" style="background-image: url('${item.clientPhotos.featured}')"></div>
-          <div class="feature-card-client-photos">
-            ${item.clientPhotos.row.map((src) => `<div class="feature-card-client-photo" style="background-image: url('${src}')"></div>`).join("\n            ")}
           </div>`
               : ""
           }

@@ -41,8 +41,8 @@
           <h3>Christopher Hodsoll</h3>
           <p class="feature-card-subheading">Interior Designer & Antiques Dealer</p>
           <p>He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses such as Bonhams and Christie's.</p>
-          <div class="feature-card-client-featured" style="background-image: url('images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg')"></div>
           <div class="feature-card-client-photos">
+            <div class="feature-card-client-photo" style="background-image: url('images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg')"></div>
             <div class="feature-card-client-photo" style="background-image: url('images/design-and-furniture/interior-design/clients/mick-jagger.jpg')"></div>
             <div class="feature-card-client-photo" style="background-image: url('images/design-and-furniture/interior-design/clients/elton-john.jpg')"></div>
           </div>
@@ -108,6 +108,15 @@
       <p>&copy; 2026 Doranax Albion Holdings. All rights reserved.</p>
     </div>
   </footer>
+  <div class="cookie-banner" data-cookie-banner hidden>
+    <div class="cookie-banner-inner">
+      <p>We use cookies to make this site work properly and to understand how it's used. By continuing, you agree to our use of cookies.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-outline" data-cookie-decline>Decline</button>
+        <button type="button" class="btn" data-cookie-accept>Accept</button>
+      </div>
+    </div>
+  </div>
   <script>
   (function () {
     var toggle = document.querySelector('[data-nav-toggle]');
@@ -123,6 +132,22 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
+  })();
+  </script>
+  <script>
+  (function () {
+    var KEY = 'doranax-cookie-consent';
+    var banner = document.querySelector('[data-cookie-banner]');
+    if (!banner) return;
+    if (!localStorage.getItem(KEY)) banner.hidden = false;
+    function dismiss(value) {
+      localStorage.setItem(KEY, value);
+      banner.hidden = true;
+    }
+    var acceptBtn = banner.querySelector('[data-cookie-accept]');
+    var declineBtn = banner.querySelector('[data-cookie-decline]');
+    if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss('accepted'); });
+    if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
   })();
   </script>
   
