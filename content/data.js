@@ -924,11 +924,13 @@ const SECTORS = [
                   subheading: "Interior Designer & Antiques Dealer",
                   body: "He is considered a legendary figure among high-end decorators, aristocrats, and international tastemakers. Over a career spanning four decades he has cultivated a strong reputation among design circles and a wealthy, high-profile clientele, including the late Duke of Edinburgh, Mick Jagger, Elton John, Sting, Damien Hirst, and Charles Saatchi. His personal collections and historic homes (such as Morville Hall) have been the subject of dedicated, high-profile auctions at major houses such as Bonhams and Christie's.",
                   image: "images/design-and-furniture/interior-design/christopher-hodsoll.jpeg",
-                  clientPhotos: [
-                    "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
-                    "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
-                    "images/design-and-furniture/interior-design/clients/elton-john.jpg",
-                  ],
+                  clientPhotos: {
+                    featured: "images/design-and-furniture/interior-design/clients/duke-of-edinburgh.jpg",
+                    row: [
+                      "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
+                      "images/design-and-furniture/interior-design/clients/elton-john.jpg",
+                    ],
+                  },
                 },
                 {
                   name: "Anna Sobolewska",
@@ -1827,6 +1829,11 @@ const SECTORS = [
                   name: "Tote Bag (Black)",
                   body: "The same heavyweight canvas construction in black, with a bold white wolf shield print for a sharper, more elevated look.",
                   image: "images/sports-wellness/doranax-athletics/tote-black.png",
+                },
+                {
+                  name: "Cap (Black)",
+                  body: "A structured six-panel cap in black cotton twill, with an embroidered wolf shield and Doranax Athletics wordmark at the front.",
+                  image: "images/sports-wellness/doranax-athletics/cap-black.png",
                 },
               ],
             },

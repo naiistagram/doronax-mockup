@@ -800,6 +800,16 @@ body.theme-luxury .feature-card-image-glow {
   font-size: 0.92rem;
 }
 
+.feature-card-client-featured {
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center top;
+  margin: 0 20px 14px;
+  box-shadow: 0 4px 16px rgba(10, 31, 68, 0.18);
+}
+
 .feature-card-client-photos {
   display: flex;
   flex-wrap: wrap;
@@ -808,8 +818,8 @@ body.theme-luxury .feature-card-image-glow {
 }
 
 .feature-card-client-photo {
-  width: 140px;
-  height: 140px;
+  width: 90px;
+  height: 90px;
   border-radius: var(--radius);
   background-size: cover;
   background-position: center top;
