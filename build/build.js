@@ -1056,7 +1056,36 @@ function run() {
 
   buildContact();
 
+  buildSitemapAndRobots();
+
   console.log(`Built ${pageCount} pages.`);
+}
+
+// Generated last, once every page file actually exists on disk — walks the
+// real output rather than re-deriving the page list, so it can't drift out
+// of sync with what build.js actually wrote.
+function buildSitemapAndRobots() {
+  const domain = "https://www.doranaxalbionholdings.com";
+  const files = fs
+    .readdirSync(ROOT)
+    .filter((f) => f.endsWith(".html"))
+    .sort();
+
+  const urls = files.map((f) => (f === "index.html" ? `${domain}/` : `${domain}/${f.replace(/\.html$/, "")}`));
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}
+</urlset>
+`;
+  fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);
+
+  const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${domain}/sitemap.xml
+`;
+  fs.writeFileSync(path.join(ROOT, "robots.txt"), robots);
 }
 
 run();
