@@ -16,6 +16,7 @@ function img(keywords, w = 900, h = 650) {
 const SITE = {
   name: "Doranax Albion Holdings",
   tagline: "A collective of businesses built on craft, trust, and growth.",
+  metaDescription: "Doranax Albion Holdings is a UK-based collective of businesses spanning advertising, consultancy, design and furniture, hospitality and events, and sport and wellness.",
   email: "info@doranaxalbionholdings.com",
   address: "3 Mary Ann Street, Birmingham, England, B3 1BG",
   heroImage: "images/homepage/globe-hero.jpg",
@@ -929,6 +930,7 @@ const SECTORS = [
                     row: [
                       "images/design-and-furniture/interior-design/clients/mick-jagger.jpg",
                       "images/design-and-furniture/interior-design/clients/elton-john.jpg",
+                      "images/design-and-furniture/interior-design/clients/sting.jpg",
                     ],
                   },
                 },
