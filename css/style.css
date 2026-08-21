@@ -1655,6 +1655,7 @@ body.theme-luxury .carousel-card-image {
   }
   .stat {
     width: 100%;
+    padding: 0;
   }
 }
 
