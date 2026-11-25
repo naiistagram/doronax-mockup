@@ -1163,6 +1163,18 @@ const SECTORS = [
             intro: "Spotless, on schedule. Professional cleaning services for hospitality and residential properties, scheduled around occupancy and turnaround times.",
             panelBody: ["Teams are trained to hospitality-grade standards, with turnaround cleans built around check-in/check-out schedules where needed."],
           },
+          {
+            slug: "tiny-house",
+            name: "Tiny House",
+            noPage: true,
+            heroImage: "images/hospitality-events/property/tiny-house-2.jpg",
+            intro: "Tiny House Pro designs and builds high-quality tiny houses that are made to last. We carefully consider the details of each home through durability, comfort and thoughtful design, creating homes that sit more lightly on the land without compromising on quality or character.",
+            panelBody: [
+              "Every house is bespoke, shaped for the client and its surroundings. Whether it’s designed to be fully off-grid or planned internally to meet the demands of modern living, each home is built with purpose and care.",
+              "Tiny House Pro homes are carefully built to feel right, live well and belong where it’s placed.",
+              `<div class="panel-thumbs"><div class="panel-thumb" style="background-image: url('images/hospitality-events/property/tiny-house-1.jpg')"></div><div class="panel-thumb" style="background-image: url('images/hospitality-events/property/tiny-house-3.jpg')"></div></div>`,
+            ],
+          },
         ],
       },
       {
